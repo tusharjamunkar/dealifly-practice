@@ -1,0 +1,995 @@
+@charset "UTF-8";
+/*--------------------------------------------------------------------
+
+Dealifly premium visual language
+Loaded after style.css. Preserves structure; reduces saturation/glow.
+--------------------------------------------------------------------*/
+:root {
+
+--bg: #050507;
+--bg-secondary: #09090d;
+--surface: #0d0d12;
+--surface-hover: #111117;
+--text-primary: #f5f5f7;
+--text-secondary: #b7b7c2;
+--text-muted: #8a8a96;
+--border: rgba(255, 255, 255, 0.08);
+--border-hover: rgba(255, 255, 255, 0.14);
+--purple: #7657d9;
+--purple-soft: #8f7ae8;
+--pink: #a855f7;
+--pink-soft: #b7a5f5;
+--lavender: #b7a5f5;
+--brand-atmosphere: linear-gradient(135deg, rgba(118, 87, 217, 0.18), rgba(168, 85, 247, 0.08));
+--cta-fill: linear-gradient(135deg, #7657d9 0%, #6a4cc4 100%);
+--glow-soft: 0 10px 28px rgba(118, 87, 217, 0.14);
+--radius-sm: 0.5rem;
+--radius-md: 0.875rem;
+--radius-lg: 1rem;
+--container-max: 72.5rem;
+--dark-saas: #050507;
+
+--dark-saas-rgb: 5, 5, 7;
+--h1: clamp(2.5rem, 3.4vw + 0.7rem, 4.65rem);
+--h2: clamp(2rem, 2.6vw + 0.7rem, 3.4rem);
+--h3: clamp(1.55rem, 1.7vw + 0.7rem, 2.35rem);
+--h4: clamp(1.25rem, 1.1vw + 0.7rem, 1.75rem);
+--p: clamp(0.9375rem, 0.35vw + 0.85rem, 1.0625rem);
+--bs-primary: #7657d9;
+
+--bs-primary-rgb: 118, 87, 217;
+--bs-secondary: #8f7ae8;
+--bs-secondary-rgb: 143, 122, 232;
+--bs-link-color: #8f7ae8;
+--bs-link-color-rgb: 143, 122, 232;
+--bs-link-hover-color: #b7a5f5;
+--bs-link-hover-color-rgb: 183, 165, 245;
+--bs-primary-text-emphasis: #b7a5f5;
+--bs-primary-bg-subtle: rgba(118, 87, 217, 0.16);
+--bs-primary-border-subtle: rgba(118, 87, 217, 0.32);
+}
+
+/* Eliminate duplicate dropdown chevron across entire site */
+.primary-header .has-sub-menu > .nav-link::after,
+.has-sub-menu > .nav-link::after,
+.navigation-1.has-sub-menu > .nav-link::after {
+    display: none !important;
+    content: none !important;
+}
+
+html {
+
+background-color: var(--bg);
+}
+body.bg-dark-saas {
+
+background-color: var(--bg) !important;
+color: var(--text-secondary);
+}
+body.bg-dark-saas h1,
+
+body.bg-dark-saas h2,
+body.bg-dark-saas h3,
+body.bg-dark-saas h4,
+body.bg-dark-saas h5,
+body.bg-dark-saas h6,
+body.bg-dark-saas .h1,
+body.bg-dark-saas .h2,
+body.bg-dark-saas .h3 {
+color: var(--text-primary);
+font-weight: 600;
+letter-spacing: -0.035em;
+}
+body.bg-dark-saas p {
+
+color: var(--text-secondary);
+line-height: 1.7;
+}
+.container {
+
+max-width: var(--container-max);
+}
+.bg-dark-saas {
+
+background-color: var(--bg) !important;
+}
+.dealifly-accent,
+
+.hero-8 .business,
+[style*="color: #f54ff2"],
+[style*="color:#f54ff2"] {
+color: var(--pink-soft) !important;
+}
+.dealifly-section-kicker {
+
+color: var(--pink-soft) !important;
+letter-spacing: 0.14em;
+font-weight: 600;
+}
+/* Typography: selected highlight words stay muted brand, not neon */
+
+.text-clip--primary,
+.text-clip--primary-alt {
+background: linear-gradient(90deg, var(--text-primary) 8%, var(--lavender) 92%);
+background-clip: text;
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+}
+/* Buttons */
+
+.btn {
+--bs-btn-border-radius: var(--radius-sm);
+font-weight: 600;
+letter-spacing: -0.01em;
+transition: transform 180ms ease, background 180ms ease, border-color 180ms ease, box-shadow 180ms ease, color 180ms ease;
+}
+.btn-primary {
+
+--bs-btn-color: #fff;
+--bs-btn-bg: #7657d9;
+--bs-btn-border-color: rgba(255, 255, 255, 0.12);
+--bs-btn-hover-color: #fff;
+--bs-btn-hover-bg: #8163e0;
+--bs-btn-hover-border-color: rgba(255, 255, 255, 0.18);
+--bs-btn-active-bg: #6a4cc4;
+--bs-btn-active-border-color: rgba(255, 255, 255, 0.18);
+box-shadow: none;
+}
+.btn-primary.rounded-pill,
+
+.navbar .btn-primary.rounded-pill {
+border-radius: 0.625rem !important;
+}
+.bg-gradient-linear,
+
+.btn.bg-gradient-linear {
+background-image: var(--cta-fill) !important;
+background-color: var(--purple) !important;
+border: 1px solid rgba(255, 255, 255, 0.12) !important;
+border-radius: var(--radius-sm) !important;
+box-shadow: none !important;
+color: #fff !important;
+}
+.btn-primary:hover,
+
+.btn.bg-gradient-linear:hover {
+transform: translateY(-1px);
+box-shadow: var(--glow-soft) !important;
+}
+.btn-outline-light,
+
+.btn-outline-primary {
+background: transparent;
+border-color: var(--border);
+color: var(--text-primary);
+}
+.btn-outline-primary {
+
+--bs-btn-color: var(--text-primary);
+--bs-btn-border-color: var(--border);
+--bs-btn-hover-color: #fff;
+--bs-btn-hover-bg: rgba(118, 87, 217, 0.18);
+--bs-btn-hover-border-color: var(--border-hover);
+}
+.btn-outline-light:hover,
+
+.btn-outline-primary:hover {
+transform: translateY(-1px);
+}
+.text-bg-primary {
+
+background-color: var(--purple) !important;
+color: #fff !important;
+}
+/* Navbar */
+
+.primary-header {
+background-color: rgba(5, 5, 7, 0.78) !important;
+border-bottom: 1px solid var(--border);
+-webkit-backdrop-filter: blur(18px);
+backdrop-filter: blur(18px);
+box-shadow: none !important;
+}
+.primary-header .container {
+
+padding-inline: clamp(1rem, 3vw, 1.75rem);
+}
+.primary-header .nav-link {
+
+color: var(--text-primary) !important;
+font-weight: 500;
+}
+.primary-header .nav-link.active {
+
+color: var(--purple-soft) !important;
+}
+.primary-header .nav-link:hover {
+
+color: var(--lavender) !important;
+}
+.primary-header--dark.primary-header--boxed > .container {
+
+background-color: rgba(13, 13, 18, 0.92) !important;
+border: 1px solid var(--border);
+box-shadow: none;
+}
+.primary-header--dark .nav-link.active,
+
+.primary-header--transparent-light-alt .nav-link.active,
+.primary-header-crossed .primary-header--transparent-light-alt .nav-link.active {
+color: var(--purple-soft) !important;
+}
+.primary-header-crossed .primary-header--transparent-light-alt:not(.primary-header--boxed) {
+
+background-color: rgba(5, 5, 7, 0.92) !important;
+color: var(--text-primary) !important;
+}
+.navigation-1__menu,
+
+.navigation-0__menu {
+background-color: var(--surface) !important;
+border: 1px solid var(--border);
+box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
+}
+.navigation-1__menu-link,
+
+.navigation-0__menu-link {
+color: var(--text-secondary) !important;
+}
+.navigation-1__menu-link:hover,
+
+.navigation-0__menu-link:hover {
+background-color: var(--surface-hover) !important;
+color: var(--text-primary) !important;
+}
+.dealifly-nav-logo__name {
+
+color: var(--text-primary);
+}
+.primary-header--transparent-light-alt .navbar-collapse {
+
+background-color: rgba(13, 13, 18, 0.98);
+border-color: var(--border);
+box-shadow: 0 16px 36px rgba(0, 0, 0, 0.4);
+}
+@media (min-width: 992px) {
+
+.primary-header--transparent-light-alt .navbar-collapse {
+background-color: transparent;
+border: 0;
+box-shadow: none;
+}
+}
+/* Hero */
+
+.hero-8 {
+background-color: var(--bg);
+}
+.hero-8::after {
+
+background:
+radial-gradient(ellipse 80% 55% at 50% -10%, rgba(118, 87, 217, 0.16), transparent 58%),
+radial-gradient(ellipse 45% 40% at 88% 18%, rgba(216, 90, 207, 0.08), transparent 55%),
+linear-gradient(180deg, rgba(5, 5, 7, 0.55) 0%, rgba(5, 5, 7, 0.18) 38%, #050507 100%);
+}
+.hero-8__backdrop-video {
+
+filter: saturate(0.45) contrast(1.02) brightness(0.42);
+opacity: 0.42;
+}
+.hero-8__content {
+
+padding-block-start: clamp(7rem, 9vw + 1.25rem, 10rem);
+padding-block-end: clamp(2.5rem, 4vw, 4.25rem);
+}
+.hero-8 h1 {
+
+color: var(--text-primary);
+font-weight: 600;
+letter-spacing: -0.045em;
+line-height: 1.08;
+margin-bottom: 1.75rem !important;
+}
+.hero-8 h1 .business {
+
+color: var(--lavender) !important;
+font-weight: 600;
+}
+.hero-8 p {
+
+color: var(--text-secondary) !important;
+max-width: 38rem;
+line-height: 1.75;
+}
+.hero-8__showcase {
+
+border: 1px solid var(--border);
+border-radius: var(--radius-lg);
+box-shadow: 0 24px 48px rgba(0, 0, 0, 0.32);
+}
+.hero-8__visual img {
+
+filter: saturate(0.86) contrast(1.02);
+}
+.hero-8 .badge {
+
+background-color: var(--purple) !important;
+box-shadow: none;
+}
+.hero-8 .bg-dark {
+
+background-color: var(--surface) !important;
+border: 1px solid var(--border);
+}
+/* Cards */
+
+.feature-card-1,
+.price-card-1,
+.folder-card-1,
+.dealifly-case-card,
+.dealifly-service-route-card,
+.dealifly-metric-card,
+.dealifly-content-panel,
+.dealifly-sidebar-panel,
+.dealifly-insight-card,
+.dealifly-benefit-card,
+.dealifly-phase-card,
+.dealifly-process-step,
+.dealifly-takeaway,
+.dealifly-impact-note {
+background-color: var(--surface);
+border: 1px solid var(--border);
+box-shadow: none;
+}
+.feature-card-1 {
+
+background-image: linear-gradient(180deg, rgba(118, 87, 217, 0.08) 0%, rgba(13, 13, 18, 0.92) 72%) !important;
+border-radius: var(--radius-lg);
+}
+.folder-card-1 {
+
+--folder-card-bg: rgba(13, 13, 18, 0.88);
+border-radius: var(--radius-lg);
+}
+.dealifly-case-card,
+
+.dealifly-service-route-card,
+.dealifly-content-panel,
+.dealifly-sidebar-panel,
+.dealifly-insight-card,
+.dealifly-metric-card,
+.dealifly-phase-card {
+background: var(--surface) !important;
+border-color: var(--border) !important;
+border-radius: 1rem;
+}
+.dealifly-case-card:hover,
+
+.dealifly-service-route-card:hover,
+.dealifly-insight-card:hover,
+.dealifly-metric-card:hover,
+.feature-card-1:hover {
+transform: translateY(-4px);
+border-color: var(--border-hover) !important;
+background-color: var(--surface-hover) !important;
+box-shadow: none;
+}
+.gradient-border--surface-dark-alt,
+
+.gradient-border--surface-dark-emphasis {
+--surface-color: var(--surface);
+--border-color-top: rgba(255, 255, 255, 0.1);
+--border-color-bottom: rgba(118, 87, 217, 0.18);
+}
+.gradient-border::before {
+
+opacity: 0.45;
+}
+/* Glow reductions */
+
+.preloader__brand {
+background: rgba(13, 13, 18, 0.72);
+border-color: var(--border);
+box-shadow: inset 0 0 1.5rem rgba(118, 87, 217, 0.06), 0 0 1.75rem rgba(118, 87, 217, 0.08);
+}
+.preloader__orbit {
+
+border-color: rgba(143, 122, 232, 0.28);
+}
+.preloader__orbit::after {
+
+background: var(--purple-soft);
+box-shadow: 0 0 0.45rem rgba(118, 87, 217, 0.28);
+}
+.pulser__content {
+
+background-image: var(--cta-fill);
+box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.12), 0 0 1.1rem rgba(118, 87, 217, 0.16);
+}
+.dealifly-process-section::before {
+
+background: rgba(118, 87, 217, 0.08);
+filter: blur(5.5rem);
+}
+.dealifly-process-section__panel {
+
+background: var(--surface);
+border-color: var(--border);
+box-shadow: 0 18px 40px rgba(0, 0, 0, 0.22);
+}
+.dealifly-process-section__video {
+
+border-color: var(--border);
+box-shadow: 0 16px 36px rgba(0, 0, 0, 0.28);
+}
+.dealifly-route-hero {
+
+background:
+radial-gradient(circle at 18% 12%, rgba(118, 87, 217, 0.12), transparent 26rem),
+radial-gradient(circle at 86% 88%, rgba(216, 90, 207, 0.06), transparent 24rem),
+var(--bg);
+border-bottom-color: var(--border);
+}
+.dealifly-listing-section {
+
+background: var(--bg);
+}
+.dealifly-listing-section--muted {
+
+background: var(--bg-secondary);
+}
+.dealifly-page {
+
+--dealifly-surface: var(--surface);
+--dealifly-surface-strong: var(--surface-hover);
+--dealifly-line: var(--border);
+--dealifly-copy: var(--text-secondary);
+--dealifly-muted: var(--text-muted);
+--dealifly-accent-soft: var(--lavender);
+background: var(--bg);
+}
+.dealifly-eyebrow-pill {
+
+background: rgba(118, 87, 217, 0.1);
+border-color: rgba(183, 165, 245, 0.22);
+color: var(--lavender);
+}
+.dealifly-eyebrow-pill__dot {
+
+background: var(--purple-soft);
+box-shadow: none;
+}
+.dealifly-service-cta {
+
+border-color: var(--border);
+background: var(--surface);
+box-shadow: 0 18px 40px rgba(0, 0, 0, 0.22);
+}
+.cta-6 {
+
+background:
+radial-gradient(ellipse 70% 80% at 50% 120%, rgba(118, 87, 217, 0.18), transparent 58%),
+var(--surface) !important;
+border-color: var(--border) !important;
+}
+.cta-6 svg {
+
+opacity: 0.28;
+}
+.platform-card-1 {
+
+background-image: var(--brand-atmosphere), url("../img/shapes/card-bg-1.png");
+}
+.bg-gradient-1 {
+
+background-image: linear-gradient(180deg, #8f7ae8 0%, #7657d9 100%) !important;
+}
+/* Sections & spacing */
+
+.section-space-y {
+padding-block-start: clamp(4.25rem, 7.4vw + 1rem, 8.5rem);
+padding-block-end: clamp(4.25rem, 7.4vw + 1rem, 8.5rem);
+}
+.section-space-top {
+
+padding-block-start: clamp(4.25rem, 7.4vw + 1rem, 8.5rem);
+}
+.dealifly-specialized-services,
+
+.dealifly-planning-section,
+.dealifly-process-section,
+.dealifly-reviews-section,
+.dealifly-reasons-section {
+padding-block-start: clamp(4rem, 6.8vw + 1rem, 8rem);
+padding-block-end: clamp(4rem, 6.8vw + 1rem, 8rem);
+}
+.dealifly-core-service-visual {
+
+border: 1px solid var(--border);
+box-shadow: none;
+}
+.dealifly-detail-media {
+
+border: 1px solid var(--border);
+border-radius: var(--radius-lg);
+overflow: hidden;
+background: var(--surface);
+}
+.dealifly-theme-page {
+
+--bs-dark: #09090d;
+--bs-dark-rgb: 9, 9, 13;
+}
+.dealifly-theme-page main[data-bs-theme="dark"] {
+
+--bs-body-bg: var(--surface);
+--bs-body-bg-rgb: 13, 13, 18;
+--bs-secondary-bg: var(--bg-secondary);
+--bs-secondary-bg-rgb: 9, 9, 13;
+--bs-tertiary-bg: var(--bg);
+--bs-tertiary-bg-rgb: 5, 5, 7;
+--bs-dark-bg-subtle: #0d0d12;
+--bs-dark-border-subtle: rgba(255, 255, 255, 0.1);
+--bs-border-color: var(--border);
+--bs-border-color-translucent: var(--border);
+--bs-heading-color: var(--text-primary);
+}
+.dealifly-pricing-page .dealifly-pricing {
+
+background:
+radial-gradient(circle at 14% 12%, rgba(118, 87, 217, 0.1), transparent 26rem),
+radial-gradient(circle at 88% 78%, rgba(216, 90, 207, 0.05), transparent 28rem),
+var(--bg);
+}
+.dealifly-pricing-page .dealifly-pricing-card,
+
+.dealifly-pricing-page .dealifly-specialized-plan {
+background: var(--surface);
+border-color: var(--border);
+box-shadow: none;
+}
+.dealifly-pricing-page .dealifly-pricing-card--featured {
+
+border-color: rgba(143, 122, 232, 0.32);
+background: radial-gradient(circle at 50% 0, rgba(118, 87, 217, 0.12), transparent 16rem), var(--surface);
+}
+.dealifly-pricing-page .dealifly-pricing-card::before {
+
+background: linear-gradient(90deg, transparent, rgba(183, 165, 245, 0.35), transparent);
+}
+.dealifly-pricing-page .dealifly-additional-services,
+
+.dealifly-pricing-page .dealifly-specialized-pricing {
+background: var(--bg-secondary);
+}
+.dealifly-pricing-page .dealifly-additional-services__group {
+
+background: var(--surface);
+border-color: var(--border);
+}
+.dealifly-pricing-page .dealifly-specialized-plan::before {
+
+opacity: 0.55;
+}
+.dealifly-footer {
+
+background: var(--bg-secondary);
+border-top: 1px solid var(--border);
+}
+.form-control,
+
+.form-select {
+background-color: var(--surface);
+border-color: var(--border);
+color: var(--text-primary);
+}
+.form-control:focus,
+
+.form-select:focus {
+border-color: rgba(143, 122, 232, 0.45);
+box-shadow: 0 0 0 0.2rem rgba(118, 87, 217, 0.12);
+}
+.accordion-item,
+
+.dealifly-faq .accordion-item {
+background: var(--surface);
+border-color: var(--border);
+}
+.dealifly-faq .accordion-button:not(.collapsed) {
+
+color: var(--text-primary);
+background: var(--surface-hover);
+}
+.dealifly-arrow-label {
+
+color: var(--lavender);
+}
+.dealifly-specialized-service-nav .btn.active,
+
+.dealifly-specialized-service-nav .btn[aria-selected="true"] {
+background-color: rgba(118, 87, 217, 0.18) !important;
+border-color: rgba(143, 122, 232, 0.35) !important;
+color: var(--text-primary) !important;
+}
+@media (max-width: 767.98px) {
+
+.hero-8 h1 {
+line-height: 1.12;
+}
+.hero-8__content {
+
+padding-block-start: 6.25rem;
+}
+.primary-header .btn-primary {
+
+width: 100%;
+justify-content: center;
+}
+.section-space-y,
+
+.dealifly-specialized-services,
+.dealifly-planning-section,
+.dealifly-process-section,
+.dealifly-reviews-section,
+.dealifly-reasons-section {
+padding-block-start: 3.5rem;
+padding-block-end: 3.5rem;
+}
+}
+@media (min-width: 768px) and (max-width: 991.98px) {
+
+.hero-8 h1 {
+max-width: 16ch;
+margin-inline: auto;
+}
+}
+
+
+/* ==========================================================================
+   UNIFIED FLOATING NAVBAR STYLES (Applies across all pages: Home, Services, Industries)
+   ========================================================================== */
+.primary-header.dealifly-floating-nav,
+.primary-header {
+    position: sticky !important;
+    top: 14px !important;
+    z-index: 1080 !important;
+    width: calc(100% - 64px) !important;
+    max-width: 1260px !important;
+    margin: 14px auto 0 !important;
+    background: rgba(8, 8, 12, 0.85) !important;
+    backdrop-filter: blur(18px) !important;
+    -webkit-backdrop-filter: blur(18px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.10) !important;
+    border-radius: 36px !important;
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.65), 0 0 1px 1px rgba(255, 255, 255, 0.04) !important;
+    padding: 0.5rem 1.4rem !important;
+    transition: background-color 200ms ease, border-color 200ms ease, box-shadow 200ms ease !important;
+}
+
+.primary-header > .container {
+    max-width: 100% !important;
+    width: 100% !important;
+    padding-left: 0.25rem !important;
+    padding-right: 0.25rem !important;
+}
+
+/* Dealifly Logo */
+.primary-header .dealifly-nav-logo {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 0.65rem !important;
+    text-decoration: none !important;
+}
+
+.primary-header .dealifly-nav-logo__name {
+    color: #FFFFFF !important;
+    -webkit-text-fill-color: #FFFFFF !important;
+    background: none !important;
+    font-size: 1.25rem !important;
+    font-weight: 700 !important;
+    letter-spacing: -0.02em !important;
+}
+
+.primary-header .dealifly-nav-logo__mark {
+    width: 34px !important;
+    height: 34px !important;
+    display: inline-block !important;
+    object-fit: contain !important;
+}
+
+/* Nav Links & Pill Hover/Active */
+.primary-header .navbar-nav .nav-link {
+    color: rgba(255, 255, 255, 0.82) !important;
+    font-size: 0.92rem !important;
+    font-weight: 500 !important;
+    padding: 0.42rem 0.95rem !important;
+    border-radius: 9999px !important;
+    transition: color 150ms ease, background-color 150ms ease, border-color 150ms ease !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    border: 1px solid transparent !important;
+}
+
+.primary-header .navbar-nav .nav-link:hover {
+    color: #FFFFFF !important;
+    background-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+.primary-header .navbar-nav .nav-link.active,
+.primary-header .navbar-nav .nav-item.active > .nav-link,
+.primary-header .navbar-nav .nav-item:hover > .nav-link {
+    color: #FFFFFF !important;
+    background-color: rgba(118, 87, 217, 0.18) !important;
+    border: 1px solid rgba(143, 122, 232, 0.32) !important;
+}
+
+/* Caret Arrow: Single, rotating on hover */
+.primary-header .dealifly-nav-caret {
+    font-size: 0.65rem !important;
+    opacity: 0.75 !important;
+    transition: transform 200ms ease, color 200ms ease !important;
+    display: inline-block !important;
+    margin-left: 0.35rem !important;
+    vertical-align: middle !important;
+}
+
+.primary-header .has-sub-menu:hover .dealifly-nav-caret,
+.primary-header .dealifly-nav-dropdown:hover .dealifly-nav-caret {
+    transform: rotate(180deg) !important;
+    opacity: 1 !important;
+    color: #b7a5f5 !important;
+}
+
+/* Eliminate duplicate dropdown chevron across entire site */
+.primary-header .has-sub-menu > .nav-link::after,
+.has-sub-menu > .nav-link::after,
+.navigation-1.has-sub-menu > .nav-link::after {
+    display: none !important;
+    content: none !important;
+}
+
+/* Dropdown Menu Panels */
+@media (min-width: 992px) {
+    .primary-header .dealifly-dropdown-menu,
+    .primary-header .navigation-1__menu {
+        position: absolute !important;
+        top: 100% !important;
+        left: 50% !important;
+        transform: translateX(-50%) translateY(8px) !important;
+        opacity: 0 !important;
+        visibility: hidden !important;
+        pointer-events: none !important;
+        background: rgba(10, 10, 16, 0.96) !important;
+        backdrop-filter: blur(20px) !important;
+        -webkit-backdrop-filter: blur(20px) !important;
+        border: 1px solid rgba(255, 255, 255, 0.12) !important;
+        border-radius: 20px !important;
+        box-shadow: 0 20px 48px -8px rgba(0, 0, 0, 0.85), 0 0 1px 1px rgba(255, 255, 255, 0.06) !important;
+        padding: 0.65rem !important;
+        display: block !important;
+        transition: opacity 180ms ease, transform 180ms ease, visibility 180ms ease !important;
+        min-width: 280px !important;
+        z-index: 1090 !important;
+        list-style: none !important;
+        margin-top: 6px !important;
+    }
+
+    .primary-header .dealifly-nav-dropdown:hover .dealifly-dropdown-menu,
+    .primary-header .dealifly-nav-dropdown:focus-within .dealifly-dropdown-menu,
+    .primary-header .has-sub-menu:hover .navigation-1__menu {
+        opacity: 1 !important;
+        visibility: visible !important;
+        pointer-events: auto !important;
+        transform: translateX(-50%) translateY(0) !important;
+    }
+
+    .primary-header .dealifly-dropdown-menu--solutions,
+    .primary-header .dealifly-dropdown-menu--services {
+        min-width: 310px !important;
+    }
+}
+
+.primary-header .dealifly-dropdown-menu .navigation-1__menu-list {
+    list-style: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.primary-header .dealifly-dropdown-menu .navigation-1__menu-link {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0.2rem !important;
+    padding: 0.6rem 0.9rem !important;
+    border-radius: 12px !important;
+    text-decoration: none !important;
+    transition: background-color 140ms ease !important;
+}
+
+.primary-header .dealifly-dropdown-menu .navigation-1__menu-link:hover {
+    background-color: rgba(255, 255, 255, 0.07) !important;
+}
+
+.primary-header .dealifly-dropdown-menu .dealifly-drop-title {
+    color: #FFFFFF !important;
+    font-size: 0.88rem !important;
+    font-weight: 600 !important;
+    letter-spacing: -0.01em !important;
+}
+
+.primary-header .dealifly-dropdown-menu .dealifly-drop-sub {
+    color: rgba(255, 255, 255, 0.55) !important;
+    font-size: 0.74rem !important;
+    line-height: 1.35 !important;
+}
+
+/* CTA 'Get Started' Button */
+.primary-header .btn-primary {
+    background: #7657D9 !important;
+    background-image: linear-gradient(135deg, #8465E5 0%, #7657D9 100%) !important;
+    color: #FFFFFF !important;
+    font-size: 0.85rem !important;
+    font-weight: 600 !important;
+    padding: 0.48rem 1.25rem !important;
+    border-radius: 9999px !important;
+    border: 1px solid rgba(255, 255, 255, 0.16) !important;
+    box-shadow: 0 2px 10px rgba(118, 87, 217, 0.25) !important;
+    transition: transform 150ms ease, box-shadow 150ms ease, filter 150ms ease !important;
+    text-decoration: none !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+.primary-header .btn-primary:hover {
+    transform: translateY(-1px) !important;
+    filter: brightness(1.08) !important;
+    box-shadow: 0 4px 14px rgba(118, 87, 217, 0.42) !important;
+    color: #FFFFFF !important;
+}
+
+/* Mobile & Tablet */
+@media (max-width: 991.98px) {
+    .primary-header.dealifly-floating-nav,
+    .primary-header {
+        width: calc(100% - 24px) !important;
+        margin: 10px auto 0 !important;
+        border-radius: 24px !important;
+        padding: 0.5rem 1rem !important;
+    }
+
+    .primary-header .dealifly-dropdown-menu,
+    .primary-header .navigation-1__menu {
+        position: static !important;
+        transform: none !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        pointer-events: auto !important;
+        background: rgba(14, 14, 22, 0.95) !important;
+        border-radius: 14px !important;
+        margin: 0.5rem 0 !important;
+        padding: 0.5rem !important;
+        box-shadow: none !important;
+    }
+}
+
+/* =====================================================================
+   DEALIFLY MOBILE UI STRUCTURE & RESPONSIVENESS OPTIMIZATIONS
+   Strictly scoped to mobile devices (max-width: 767.98px)
+   Protects desktop and tablet (min-width: 768px) pixel-identical
+   ===================================================================== */
+
+@media (max-width: 767.98px) {
+    /* 1. Global Viewport & Horizontal Overflow Shield */
+    html,
+    body {
+        overflow-x: hidden !important;
+        max-width: 100vw !important;
+        position: relative !important;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    /* 2. Container & Negative Margin Gutter Correction */
+    .container,
+    .container-fluid {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    /* Prevent Bootstrap large gutters (g-4, g-5, g-xl-8) from blowing out container widths */
+    .row {
+        margin-left: -0.5rem !important;
+        margin-right: -0.5rem !important;
+    }
+
+    .row > * {
+        padding-left: 0.5rem !important;
+        padding-right: 0.5rem !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    .row.g-5,
+    .row.g-4,
+    .row.g-xl-8,
+    .row.g-lg-5,
+    .row.g-md-4 {
+        --bs-gutter-x: 1rem !important;
+        --bs-gutter-y: 1.25rem !important;
+    }
+
+    /* 3. Logo / Partner Carousel Mobile Containment */
+    .hero-8__partner-carousel,
+    .hero-8__partner-track-wrap,
+    .dealifly-partner-ticker-wrap {
+        overflow: hidden !important;
+        max-width: 100vw !important;
+    }
+
+    /* 4. Table Containers Smooth Touch Scrolling */
+    .dealifly-timeline-table-wrapper,
+    .dealifly-plan-comparison,
+    .table-responsive {
+        width: 100% !important;
+        max-width: 100% !important;
+        overflow-x: auto !important;
+        -webkit-overflow-scrolling: touch !important;
+        display: block !important;
+    }
+
+    /* 5. Mobile Form Input Comfort & Sizing */
+    .form-control,
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    textarea,
+    select {
+        font-size: 16px !important; /* Prevents unwanted iOS auto-zoom on focus */
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    /* 6. Touch-Friendly Interactive Elements & Tap Targets */
+    .dealifly-btn-primary,
+    .dealifly-btn-secondary,
+    .ind-btn-primary,
+    .ind-btn-ghost,
+    .btn {
+        min-height: 44px !important; /* Standard mobile touch target */
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    /* 7. Footer Contact Word Wrap on Narrow Screens */
+    .dealifly-footer__contact-val,
+    .dealifly-footer a.dealifly-footer__contact-val {
+        word-break: break-word !important;
+        overflow-wrap: anywhere !important;
+    }
+
+    /* 8. WhatsApp Float Safety Offset */
+    .dealifly-whatsapp-float {
+        bottom: 18px !important;
+        right: 18px !important;
+        width: 52px !important;
+        height: 52px !important;
+        z-index: 9999 !important;
+    }
+}
+
+/* Extra Small Phones (<= 375px) Fine-Tuning */
+@media (max-width: 375px) {
+    .container {
+        padding-left: 0.75rem !important;
+        padding-right: 0.75rem !important;
+    }
+
+    .dealifly-btn-primary,
+    .dealifly-btn-secondary,
+    .ind-btn-primary,
+    .ind-btn-ghost {
+        padding: 0.75rem 1.25rem !important;
+        font-size: 0.9rem !important;
+    }
+}

@@ -1,0 +1,2573 @@
+@charset "UTF-8";
+
+/* ====================================================================
+   Dealifly Solutions Page Refinement (company-growth-marketing.html)
+   - Matches Dealifly Homepage & Case Study design system:
+     * Dark near-black background (#050507)
+     * Wide desktop container (~88-90% viewport, max 1380px)
+     * Plus Jakarta Sans typography & restrained purple accents
+     * Zero layout deformation or text distortion on hover
+     * Fully responsive: Desktop, Tablet, Mobile
+   ==================================================================== */
+
+:root {
+    --df-wide-max: 1380px;
+    --df-wide-width: min(90%, 1380px);
+}
+
+/* --- Floating Navbar Alignment --- */
+body.dealifly-solutions-page .primary-header {
+    width: var(--df-wide-width) !important;
+    max-width: var(--df-wide-max) !important;
+    margin: 14px auto 0 !important;
+}
+
+@media (max-width: 991.98px) {
+    body.dealifly-solutions-page .primary-header {
+        width: calc(100% - 24px) !important;
+        margin: 10px auto 0 !important;
+    }
+}
+
+/* --- Unified Wide Desktop Containers --- */
+body.dealifly-solutions-page .container {
+    width: var(--df-wide-width) !important;
+    max-width: var(--df-wide-max) !important;
+    margin-inline: auto !important;
+}
+
+/* --- Hero Section Refinements: 100% Height & 100% Width Viewport Hero --- */
+body.dealifly-solutions-page .dealifly-solution-hero,
+.dealifly-solution-hero {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-height: 100vh !important;
+    min-height: 100dvh !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    box-sizing: border-box !important;
+    padding-top: clamp(6.25rem, 9.5vh, 8.25rem) !important;
+    padding-bottom: clamp(2.5rem, 4.5vh, 4rem) !important;
+    position: relative !important;
+    margin: 0 !important;
+}
+
+body.dealifly-solutions-page .dealifly-solution-hero > .container,
+.dealifly-solution-hero > .container {
+    width: 100% !important;
+    max-width: 1320px !important;
+    margin-inline: auto !important;
+    position: relative !important;
+    z-index: 2 !important;
+}
+
+body.dealifly-solutions-page .dealifly-solution-title {
+    font-size: clamp(2.35rem, 4.2vw, 3.75rem) !important;
+    letter-spacing: -0.035em !important;
+    line-height: 1.12 !important;
+    max-width: 24ch;
+}
+
+body.dealifly-solutions-page .dealifly-solution-lede {
+    max-width: 58rem !important;
+    font-size: clamp(1.05rem, 1.25vw, 1.2rem) !important;
+    line-height: 1.7 !important;
+    color: rgba(245, 245, 247, 0.8) !important;
+}
+
+/* Hero Stats Strip - Spans Full Width Cleanly */
+body.dealifly-solutions-page .dealifly-solution-stats-strip {
+    max-width: 100% !important;
+    display: grid !important;
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: clamp(1rem, 2vw, 2rem) !important;
+    padding-top: 2rem !important;
+    margin-top: 2.5rem !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+body.dealifly-solutions-page .dealifly-solution-stat-item {
+    padding: 0.5rem 0;
+}
+
+body.dealifly-solutions-page .dealifly-solution-stat-item strong {
+    font-size: clamp(1.6rem, 2.4vw, 2.2rem) !important;
+    color: #FFFFFF !important;
+    font-weight: 700 !important;
+    letter-spacing: -0.02em !important;
+    line-height: 1.1 !important;
+}
+
+body.dealifly-solutions-page .dealifly-solution-stat-item span {
+    font-size: 0.8125rem !important;
+    color: var(--df-text-muted) !important;
+    letter-spacing: 0.05em !important;
+    margin-top: 0.35rem !important;
+    font-weight: 500 !important;
+}
+
+@media (max-width: 991.98px) {
+    body.dealifly-solutions-page .dealifly-solution-stats-strip {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+}
+
+@media (max-width: 575.98px) {
+    body.dealifly-solutions-page .dealifly-solution-stats-strip {
+        grid-template-columns: 1fr !important;
+        gap: 1.25rem !important;
+    }
+}
+
+/* ================================================================
+   Interactive Architecture Console & Live Pipeline Fixes
+   ================================================================ */
+.dealifly-solution-console-section {
+    padding: clamp(2rem, 4vw, 3.5rem) 0 !important;
+}
+
+.dealifly-solution-console {
+    background: #09090D !important;
+    border: 1px solid rgba(255, 255, 255, 0.10) !important;
+    border-radius: 20px !important;
+    box-shadow: 0 20px 50px -15px rgba(0, 0, 0, 0.85), 0 0 1px 1px rgba(255, 255, 255, 0.04) !important;
+    overflow: hidden !important;
+}
+
+.dealifly-console-header {
+    background: rgba(15, 14, 22, 0.85) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+    padding: 0.95rem 1.6rem !important;
+}
+
+.dealifly-console-body {
+    position: relative !important;
+    padding: clamp(2rem, 3.5vw, 3rem) clamp(1.5rem, 3vw, 2.5rem) !important;
+    background: radial-gradient(circle at 50% 30%, rgba(118, 87, 217, 0.07), transparent 65%), #07070B !important;
+    min-height: auto !important;
+}
+
+/* --- Responsive HTML Live Pipeline --- */
+.dealifly-live-pipeline {
+    position: relative;
+    width: 100%;
+}
+
+/* Connecting Line Running Behind Cards */
+.dealifly-pipeline-track {
+    position: absolute;
+    top: 50%;
+    left: 2rem;
+    right: 2rem;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.07);
+    transform: translateY(-50%);
+    z-index: 1;
+    pointer-events: none;
+    border-radius: 2px;
+}
+
+.dealifly-pipeline-beam {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, 
+        transparent 0%, 
+        rgba(143, 122, 232, 0.4) 30%, 
+        rgba(183, 165, 245, 0.8) 50%, 
+        rgba(67, 201, 139, 0.6) 80%, 
+        transparent 100%);
+    background-size: 200% 100%;
+    animation: dfBeamSlide 6s linear infinite;
+}
+
+@keyframes dfBeamSlide {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+}
+
+/* Cards Grid */
+.dealifly-pipeline-cards {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: clamp(1rem, 1.8vw, 1.6rem);
+    width: 100%;
+}
+
+/* Single Pipeline Card */
+.dealifly-pipeline-card {
+    background: rgba(14, 13, 22, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.11);
+    border-radius: 16px;
+    padding: 1.45rem 1.4rem;
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 10px 26px -10px rgba(0, 0, 0, 0.65);
+    cursor: default;
+    /* STABLE GEOMETRY: Only visual properties transition. No size, margin, or layout shifts! */
+    transition: transform 220ms ease, border-color 220ms ease, box-shadow 220ms ease, background-color 220ms ease;
+    position: relative;
+}
+
+/* Controlled Subtle Hover - Zero Collisions, Zero Deformation */
+.dealifly-pipeline-card:hover {
+    transform: translateY(-3px);
+    border-color: rgba(155, 130, 232, 0.42);
+    background: rgba(20, 18, 30, 0.98);
+    box-shadow: 0 16px 36px -10px rgba(0, 0, 0, 0.8), 0 0 20px rgba(118, 87, 217, 0.15);
+    z-index: 4;
+}
+
+.dealifly-pipeline-card--active {
+    border-color: rgba(155, 130, 232, 0.35);
+}
+
+.dealifly-pipeline-card--success {
+    border-color: rgba(67, 201, 139, 0.35);
+}
+
+.dealifly-pipeline-card--success:hover {
+    border-color: rgba(67, 201, 139, 0.55);
+    box-shadow: 0 16px 36px -10px rgba(0, 0, 0, 0.8), 0 0 20px rgba(67, 201, 139, 0.18);
+}
+
+/* Card Header (Step Number & Titles) */
+.dealifly-pipeline-card__header {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    margin-bottom: 1.1rem;
+    padding-bottom: 0.9rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.dealifly-pipeline-card__badge {
+    font-family: var(--df-font-mono, monospace);
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: #C4B5FD !important;
+    background: rgba(124, 58, 237, 0.2) !important;
+    border: 1.5px solid #7C3AED !important;
+    width: 36px;
+    height: 36px;
+    border-radius: 9px !important;
+    box-shadow: 0 0 12px rgba(124, 58, 237, 0.35) !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.dealifly-pipeline-card--active .dealifly-pipeline-card__badge {
+    background: rgba(118, 87, 217, 0.28);
+    border-color: #9B82E8;
+    color: #FFFFFF;
+}
+
+.dealifly-pipeline-card--success .dealifly-pipeline-card__badge {
+    background: rgba(67, 201, 139, 0.16);
+    border-color: #43C98B;
+    color: #43C98B;
+}
+
+.dealifly-pipeline-card__title {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #FFFFFF;
+    margin: 0 0 0.15rem;
+    line-height: 1.25;
+}
+
+.dealifly-pipeline-card__sub {
+    font-size: 0.72rem;
+    color: rgba(255, 255, 255, 0.5);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: 500;
+}
+
+.dealifly-pipeline-card--success .dealifly-pipeline-card__sub {
+    color: #43C98B;
+}
+
+/* Bullet List Inside Card */
+.dealifly-pipeline-card__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.55rem;
+}
+
+.dealifly-pipeline-card__list li {
+    font-size: 0.8125rem;
+    color: rgba(245, 245, 247, 0.78);
+    line-height: 1.45;
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+}
+
+.dealifly-pipeline-card__list li::before {
+    content: "•";
+    color: var(--df-purple-soft, #8F7AE8);
+    font-size: 1rem;
+    line-height: 1;
+}
+
+.dealifly-pipeline-card--success .dealifly-pipeline-card__list li {
+    color: #FFFFFF;
+}
+
+.dealifly-pipeline-card--success .dealifly-pipeline-card__list li::before {
+    color: #43C98B;
+}
+
+.dealifly-pipeline-card__list li.dealifly-pipeline-card__highlight {
+    color: #43C98B;
+    font-weight: 600;
+}
+
+.dealifly-pipeline-card__list li.dealifly-pipeline-card__highlight::before {
+    display: none;
+}
+
+/* Console Footer Steps - 4-Column Responsive Grid */
+body.dealifly-solutions-page .dealifly-console-footer {
+    display: grid !important;
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 1px !important;
+    background: rgba(255, 255, 255, 0.07) !important;
+}
+
+body.dealifly-solutions-page .dealifly-console-step {
+    padding: 1.15rem 1.4rem !important;
+    background: rgba(14, 14, 20, 0.96) !important;
+}
+
+/* Responsive Behavior for Pipeline */
+@media (max-width: 1080px) and (min-width: 768px) {
+    .dealifly-pipeline-cards {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.25rem;
+    }
+
+    .dealifly-pipeline-track {
+        display: none;
+    }
+
+    body.dealifly-solutions-page .dealifly-console-footer {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .dealifly-pipeline-cards {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .dealifly-pipeline-track {
+        display: none;
+    }
+
+    body.dealifly-solutions-page .dealifly-console-footer {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+/* ================================================================
+   Main Solution Details & Sidebar Section
+   ================================================================ */
+body.dealifly-solutions-page .dealifly-solution-main-section {
+    padding: clamp(3.5rem, 6vw, 6rem) 0 !important;
+}
+
+/* Top Grid (Sidebar + Overview Card) */
+body.dealifly-solutions-page .dealifly-solution-top-grid {
+    align-items: stretch !important;
+}
+
+body.dealifly-solutions-page .dealifly-solution-sidebar-col {
+    display: flex;
+    flex-direction: column;
+}
+
+body.dealifly-solutions-page .dealifly-solution-sidebar {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+body.dealifly-solutions-page .dealifly-solution-overview-col {
+    display: flex;
+    flex-direction: column;
+}
+
+body.dealifly-solutions-page .dealifly-solution-card--overview {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Wide Centered Content Stack Spanning Available Desktop Width */
+body.dealifly-solutions-page .dealifly-solution-full-stack {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: clamp(2rem, 3.5vw, 3rem) !important;
+    margin-top: clamp(2.5rem, 4vw, 3.5rem) !important;
+    width: 100% !important;
+}
+
+/* Content Stack Cards */
+body.dealifly-solutions-page .dealifly-solution-card {
+    background: rgba(12, 11, 18, 0.75) !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    border-radius: 20px !important;
+    padding: clamp(2rem, 3.5vw, 3rem) !important;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+body.dealifly-solutions-page .dealifly-copy-lead {
+    max-width: 78ch !important;
+    font-size: 1.0625rem !important;
+    line-height: 1.75 !important;
+    color: rgba(245, 245, 247, 0.95) !important;
+}
+
+body.dealifly-solutions-page .dealifly-copy {
+    max-width: 78ch !important;
+    font-size: 0.98rem !important;
+    line-height: 1.75 !important;
+    color: rgba(245, 245, 247, 0.78) !important;
+}
+
+/* Capabilities Grid - 4 Columns Across Desktop, 2 on Tablet, 1 on Mobile */
+body.dealifly-solutions-page .dealifly-capabilities-grid {
+    display: grid !important;
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: clamp(1rem, 1.8vw, 1.5rem) !important;
+    margin-top: 1.75rem !important;
+    width: 100% !important;
+}
+
+body.dealifly-solutions-page .dealifly-capability-item {
+    background: rgba(18, 17, 26, 0.6) !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    border-radius: 16px !important;
+    padding: 1.6rem 1.4rem !important;
+    transition: transform 220ms ease, border-color 220ms ease, background-color 220ms ease !important;
+    display: flex !important;
+    flex-direction: column !important;
+    height: 100% !important;
+}
+
+body.dealifly-solutions-page .dealifly-capability-item:hover {
+    transform: translateY(-2px) !important;
+    border-color: rgba(155, 130, 232, 0.3) !important;
+    background: rgba(24, 22, 36, 0.8) !important;
+}
+
+@media (max-width: 1099.98px) and (min-width: 641px) {
+    body.dealifly-solutions-page .dealifly-capabilities-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+}
+
+@media (max-width: 640.98px) {
+    body.dealifly-solutions-page .dealifly-capabilities-grid {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+/* Process Pipeline Steps - 3-Column Roadmap Across Desktop */
+body.dealifly-solutions-page .dealifly-process-pipeline {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: clamp(1rem, 1.8vw, 1.5rem) !important;
+    margin-top: 1.75rem !important;
+    width: 100% !important;
+}
+
+body.dealifly-solutions-page .dealifly-pipeline-step {
+    background: rgba(18, 17, 26, 0.5) !important;
+    border: 1px solid rgba(255, 255, 255, 0.07) !important;
+    border-radius: 16px !important;
+    padding: 1.6rem 1.6rem !important;
+    transition: border-color 200ms ease, background-color 200ms ease !important;
+    display: flex !important;
+    flex-direction: column !important;
+    height: 100% !important;
+}
+
+body.dealifly-solutions-page .dealifly-pipeline-step:hover {
+    border-color: rgba(155, 130, 232, 0.28) !important;
+    background: rgba(22, 20, 32, 0.7) !important;
+}
+
+body.dealifly-solutions-page .dealifly-pipeline-step .dealifly-pipeline-number {
+    font-family: var(--df-font-mono, monospace);
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #C4B5FD !important;
+    background: rgba(124, 58, 237, 0.2) !important;
+    border: 1.5px solid #7C3AED !important;
+    width: 38px;
+    height: 38px;
+    border-radius: 10px !important;
+    box-shadow: 0 0 14px rgba(124, 58, 237, 0.4) !important;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.1rem;
+    flex-shrink: 0;
+}
+
+@media (max-width: 991.98px) {
+    body.dealifly-solutions-page .dealifly-process-pipeline {
+        grid-template-columns: 1fr !important;
+        gap: 1.15rem !important;
+    }
+}
+
+/* CTA Card - Full Width Clean Dark Glass */
+body.dealifly-solutions-page .dealifly-solution-cta-card {
+    border-radius: 22px !important;
+    padding: clamp(2.5rem, 4.5vw, 4rem) clamp(1.5rem, 3.5vw, 3.5rem) !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+body.dealifly-solutions-page .dealifly-solution-cta-desc {
+    max-width: 720px !important;
+    margin: 0 auto 1.85rem !important;
+}
+
+/* FAQ Accordion - Spans Full Width Cleanly */
+body.dealifly-solutions-page .dealifly-solution-faq {
+    width: 100% !important;
+    margin-top: 1.5rem !important;
+}
+
+body.dealifly-solutions-page .dealifly-solution-faq .accordion-item {
+    width: 100% !important;
+}
+
+body.dealifly-solutions-page .dealifly-solution-faq .accordion-body {
+    max-width: 90ch;
+    line-height: 1.7;
+    color: rgba(245, 245, 247, 0.85);
+}
+
+/* Footer Container Alignment */
+body.dealifly-solutions-page .dealifly-footer .container {
+    width: var(--df-wide-width) !important;
+    max-width: var(--df-wide-max) !important;
+    margin-inline: auto !important;
+}
+
+/* ================================================================
+   Dealifly Solutions Design System (Matching B2B Marketing Standard)
+   - Clean, professional, restrained Dealifly design system
+   - Responsive multi-column to single-column transitions
+   ================================================================ */
+
+/* Section Spacing & Containers */
+.dealifly-solution-section,
+.dealifly-b2b-section {
+    padding: clamp(2.5rem, 4.5vw, 4rem) 0;
+    width: 100%;
+}
+
+.dealifly-solution-section-header,
+.dealifly-b2b-section-header {
+    margin-bottom: clamp(1.75rem, 3vw, 2.75rem);
+}
+
+.dealifly-b2b-kicker,
+.dealifly-solution-section-header .dealifly-kicker,
+.dealifly-solution-section-header .dealifly-cap-badge,
+.dealifly-b2b-section-header .dealifly-kicker,
+.dealifly-b2b-section-header .dealifly-cap-badge,
+.dealifly-overview-card .dealifly-kicker,
+.dealifly-overview-card .dealifly-cap-badge,
+.dealifly-pricing-banner .dealifly-kicker,
+.dealifly-pricing-banner .dealifly-cap-badge,
+.dealifly-cap-badge,
+.dealifly-kicker {
+    display: block !important;
+    padding: 0 !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    font-family: var(--dealifly-font-sans, "Plus Jakarta Sans", sans-serif) !important;
+    font-size: 0.8125rem !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.08em !important;
+    color: #8F7AE8 !important;
+    line-height: 1.35 !important;
+    margin-bottom: 0.5rem !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+.dealifly-cap-badge__dot,
+.dealifly-solution-badge__dot,
+.dealifly-kicker::before {
+    display: none !important;
+}
+
+.dealifly-solution-section-header .dealifly-heading-lg,
+.dealifly-b2b-section-header .dealifly-heading-lg {
+    font-size: clamp(2rem, 3.2vw, 2.75rem) !important;
+    font-weight: 700 !important;
+    color: #FFFFFF !important;
+    letter-spacing: -0.03em !important;
+    line-height: 1.15 !important;
+    margin-bottom: 0.75rem !important;
+}
+
+.dealifly-solution-section-header .dealifly-copy-lead,
+.dealifly-b2b-section-header .dealifly-copy-lead {
+    font-size: clamp(1rem, 1.25vw, 1.125rem) !important;
+    color: rgba(245, 245, 247, 0.78) !important;
+    line-height: 1.65 !important;
+    max-width: 68ch !important;
+    margin-bottom: 0 !important;
+}
+
+/* Service Overview Card */
+.dealifly-overview-card {
+    background: rgba(14, 13, 22, 0.75);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    padding: clamp(2rem, 3.5vw, 3rem);
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.dealifly-overview-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #8F7AE8, rgba(143, 122, 232, 0.2));
+    opacity: 0.8;
+}
+
+
+.dealifly-overview-card .dealifly-heading-lg {
+    font-size: clamp(1.75rem, 2.8vw, 2.35rem);
+    font-weight: 700;
+    color: #FFFFFF;
+    letter-spacing: -0.025em;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+
+/* Deliverables Pills Inside Overview */
+.dealifly-deliverables-cloud {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.65rem;
+    margin-top: 1.5rem;
+}
+
+.dealifly-deliverable-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.45rem 0.95rem;
+    background: rgba(118, 87, 217, 0.1);
+    border: 1px solid rgba(155, 130, 232, 0.22);
+    border-radius: 30px;
+    font-size: 0.8125rem;
+    color: #FFFFFF;
+    font-weight: 500;
+}
+
+.dealifly-deliverable-pill i {
+    color: #B7A5F5;
+}
+
+/* CTA Proof Points */
+.dealifly-cta-proof,
+.dealifly-solution-cta-proof {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.dealifly-cta-proof span,
+.dealifly-solution-cta-proof span {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+    color: rgba(245, 245, 247, 0.75);
+}
+
+.dealifly-cta-proof span i,
+.dealifly-solution-cta-proof span i {
+    color: #43C98B;
+    font-size: 1rem;
+}
+
+
+/* Two Approaches (2 Boxes Grid) */
+.dealifly-two-boxes-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: clamp(1.25rem, 2.5vw, 2rem);
+    width: 100%;
+}
+
+.dealifly-approach-box {
+    background: rgba(14, 13, 22, 0.85);
+    border: 1px solid rgba(255, 255, 255, 0.09);
+    border-radius: 20px;
+    padding: clamp(1.75rem, 3vw, 2.5rem);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+    transition: transform 220ms ease, border-color 220ms ease, box-shadow 220ms ease, background-color 220ms ease;
+}
+
+.dealifly-approach-box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #8F7AE8, rgba(143, 122, 232, 0.2));
+    opacity: 0.7;
+}
+
+.dealifly-approach-box--inbound::before {
+    background: linear-gradient(90deg, #B7A5F5, rgba(183, 165, 245, 0.2));
+}
+
+.dealifly-approach-box:hover {
+    transform: translateY(-3px);
+    border-color: rgba(155, 130, 232, 0.35);
+    background: rgba(18, 16, 28, 0.95);
+    box-shadow: 0 16px 36px -12px rgba(0, 0, 0, 0.75), 0 0 20px rgba(118, 87, 217, 0.12);
+}
+
+.dealifly-approach-box__header {
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+    margin-bottom: 1.1rem;
+}
+
+.dealifly-approach-box__icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px !important;
+    background: rgba(124, 58, 237, 0.2) !important;
+    border: 1.5px solid #7C3AED !important;
+    color: #C4B5FD !important;
+    box-shadow: 0 0 14px rgba(124, 58, 237, 0.4) !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    flex-shrink: 0;
+}
+
+.dealifly-approach-box__icon i,
+.dealifly-hub-card__icon i {
+    font-size: 1.35rem !important;
+    color: #C4B5FD !important;
+    line-height: 1 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+.dealifly-approach-box__title {
+    font-size: clamp(1.4rem, 2vw, 1.7rem);
+    font-weight: 700;
+    color: #FFFFFF;
+    margin: 0;
+    letter-spacing: -0.02em;
+}
+
+.dealifly-approach-box__desc {
+    font-size: 1rem;
+    color: rgba(245, 245, 247, 0.85);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.dealifly-approach-box__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.dealifly-approach-box__list li {
+    font-size: 0.9375rem;
+    color: rgba(245, 245, 247, 0.88);
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    line-height: 1.45;
+}
+
+.dealifly-approach-box__list li i {
+    color: #9B82E8;
+    font-size: 1rem;
+    flex-shrink: 0;
+}
+
+@media (max-width: 860px) {
+    .dealifly-two-boxes-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Feature Grids (3-Column & 4-Column Cards) */
+.dealifly-feature-grid-4 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: clamp(1rem, 1.8vw, 1.5rem);
+    width: 100%;
+}
+
+.dealifly-feature-grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: clamp(1rem, 1.8vw, 1.5rem);
+    width: 100%;
+}
+
+.dealifly-feature-card {
+    background: rgba(14, 13, 22, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 18px;
+    padding: clamp(1.4rem, 2vw, 1.85rem);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    transition: transform 200ms ease, border-color 200ms ease, background-color 200ms ease;
+}
+
+.dealifly-feature-card:hover {
+    transform: translateY(-2px);
+    border-color: rgba(155, 130, 232, 0.3);
+    background: rgba(20, 18, 30, 0.85);
+}
+
+.dealifly-feature-card__badge {
+    font-family: var(--df-font-mono, monospace);
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #C4B5FD !important;
+    background: rgba(124, 58, 237, 0.2) !important;
+    border: 1.5px solid #7C3AED !important;
+    width: 40px;
+    height: 40px;
+    border-radius: 10px !important;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.1rem;
+    flex-shrink: 0;
+    box-shadow: 0 0 14px rgba(124, 58, 237, 0.45) !important;
+    transition: all 200ms ease;
+}
+
+.dealifly-feature-card:hover .dealifly-feature-card__badge {
+    border-color: #A78BFA !important;
+    box-shadow: 0 0 20px rgba(139, 92, 246, 0.75) !important;
+    color: #FFFFFF !important;
+    background: rgba(124, 58, 237, 0.35) !important;
+}
+
+.dealifly-feature-card__title {
+    font-size: 1.0625rem;
+    font-weight: 600;
+    color: #FFFFFF;
+    margin: 0 0 0.65rem;
+    line-height: 1.35;
+    letter-spacing: -0.01em;
+}
+
+.dealifly-feature-card__text {
+    font-size: 0.875rem;
+    color: rgba(245, 245, 247, 0.75);
+    line-height: 1.6;
+    margin: 0;
+}
+
+@media (max-width: 1140px) and (min-width: 768px) {
+    .dealifly-feature-grid-4 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 991.98px) and (min-width: 768px) {
+    .dealifly-feature-grid-3 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 767.98px) {
+    .dealifly-feature-grid-3,
+    .dealifly-feature-grid-4 {
+        grid-template-columns: 1fr !important;
+        gap: 1.15rem !important;
+    }
+}
+
+.dealifly-feature-grid-2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: clamp(1rem, 1.8vw, 1.5rem);
+    width: 100%;
+}
+
+@media (max-width: 767.98px) {
+    .dealifly-feature-grid-2 {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Outbound vs. Inbound Timelines Table */
+.dealifly-timeline-card {
+    background: rgba(14, 13, 22, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.09);
+    border-radius: 20px;
+    padding: clamp(1.5rem, 3vw, 2.5rem);
+    width: 100%;
+}
+
+.dealifly-timeline-table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    border-radius: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.dealifly-timeline-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0;
+    min-width: 600px;
+}
+
+.dealifly-timeline-table th {
+    background: rgba(22, 20, 32, 0.95);
+    color: #FFFFFF;
+    font-size: 0.9375rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    padding: 1.15rem 1.6rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: left;
+}
+
+.dealifly-timeline-table th:first-child {
+    width: 28%;
+}
+
+.dealifly-timeline-table th:nth-child(2) {
+    width: 36%;
+    color: #B7A5F5;
+}
+
+.dealifly-timeline-table th:nth-child(3) {
+    width: 36%;
+    color: #43C98B;
+}
+
+.dealifly-timeline-table td {
+    padding: 1.35rem 1.6rem;
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    color: rgba(245, 245, 247, 0.88);
+    background: rgba(14, 13, 22, 0.6);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    vertical-align: middle;
+}
+
+.dealifly-timeline-table td:first-child {
+    font-weight: 600;
+    color: #FFFFFF;
+}
+
+/* Pricing, Success & Tools Layout */
+.dealifly-pricing-banner {
+    background: rgba(16, 14, 26, 0.85);
+    border: 1px solid rgba(155, 130, 232, 0.28);
+    border-radius: 20px;
+    padding: clamp(2rem, 3.5vw, 3rem);
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 16px 40px -15px rgba(0, 0, 0, 0.7);
+}
+
+.dealifly-pricing-banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #8F7AE8, #B7A5F5, #43C98B);
+}
+
+.dealifly-pricing-banner__title {
+    font-size: clamp(1.5rem, 2.2vw, 2rem);
+    font-weight: 700;
+    color: #FFFFFF;
+    margin: 0 0 1rem;
+    letter-spacing: -0.02em;
+}
+
+.dealifly-pricing-banner__text {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: rgba(245, 245, 247, 0.9);
+    margin-bottom: 1rem;
+    max-width: 82ch;
+}
+
+.dealifly-pricing-banner__note {
+    font-size: 0.9375rem;
+    color: rgba(245, 245, 247, 0.75);
+    line-height: 1.6;
+    margin-bottom: 1.75rem;
+    max-width: 82ch;
+}
+
+.dealifly-meta-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: clamp(1.25rem, 2.5vw, 2rem);
+    width: 100%;
+    margin-top: clamp(1.5rem, 2.5vw, 2.5rem);
+}
+
+.dealifly-meta-card {
+    background: rgba(14, 13, 22, 0.75);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 18px;
+    padding: clamp(1.5rem, 2.5vw, 2.25rem);
+    display: flex;
+    flex-direction: column;
+    transition: transform 200ms ease, border-color 200ms ease;
+}
+
+.dealifly-meta-card:hover {
+    transform: translateY(-2px);
+    border-color: rgba(155, 130, 232, 0.3);
+}
+
+.dealifly-meta-card__icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px !important;
+    background: rgba(124, 58, 237, 0.2) !important;
+    border: 1.5px solid #7C3AED !important;
+    color: #C4B5FD !important;
+    box-shadow: 0 0 14px rgba(124, 58, 237, 0.4) !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.15rem;
+    margin-bottom: 1rem;
+    flex-shrink: 0;
+}
+
+.dealifly-meta-card__title {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: #FFFFFF;
+    margin: 0 0 0.75rem;
+    letter-spacing: -0.015em;
+}
+
+.dealifly-meta-card__text {
+    font-size: 0.9375rem;
+    color: rgba(245, 245, 247, 0.8);
+    line-height: 1.65;
+    margin: 0;
+}
+
+@media (max-width: 767.98px) {
+    .dealifly-meta-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ================================================================
+   FAQ Accordion Custom Down Arrow (Prominent & High Contrast)
+   ================================================================ */
+.dealifly-solution-faq .accordion-item {
+    background: rgba(18, 18, 26, 0.6) !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    border-radius: 14px !important;
+    margin-bottom: 0.85rem !important;
+    overflow: hidden !important;
+    transition: border-color 200ms ease, background-color 200ms ease !important;
+}
+
+.dealifly-solution-faq .accordion-item:hover {
+    border-color: rgba(155, 130, 232, 0.3) !important;
+}
+
+.dealifly-solution-faq .accordion-button {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    width: 100% !important;
+    background: transparent !important;
+    color: #FFFFFF !important;
+    font-size: 1rem !important;
+    font-weight: 600 !important;
+    padding: 1.25rem 1.6rem !important;
+    box-shadow: none !important;
+    border: none !important;
+    text-align: left !important;
+    cursor: pointer !important;
+}
+
+.dealifly-solution-faq .accordion-button:not(.collapsed) {
+    color: #B7A5F5 !important;
+    background: rgba(118, 87, 217, 0.12) !important;
+}
+
+.dealifly-solution-faq .accordion-button::after {
+    content: "" !important;
+    display: inline-block !important;
+    width: 1.35rem !important;
+    height: 1.35rem !important;
+    margin-left: auto !important;
+    flex-shrink: 0 !important;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23B7A5F5'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e") !important;
+    background-repeat: no-repeat !important;
+    background-size: 1.25rem !important;
+    background-position: center !important;
+    filter: none !important;
+    opacity: 0.95 !important;
+    transition: transform 250ms ease, opacity 250ms ease !important;
+    transform: rotate(0deg) !important;
+}
+
+.dealifly-solution-faq .accordion-button:not(.collapsed)::after {
+    transform: rotate(180deg) !important;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23FFFFFF'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e") !important;
+    opacity: 1 !important;
+}
+
+.dealifly-solution-faq .accordion-body {
+    padding: 1.15rem 1.6rem 1.5rem !important;
+    color: rgba(245, 245, 247, 0.82) !important;
+    font-size: 0.95rem !important;
+    line-height: 1.7 !important;
+}
+
+/* ================================================================
+   Content Marketing Specific Layout Classes
+   ================================================================ */
+/* 5-Column Feature Grid for Process */
+.dealifly-feature-grid-5 {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: clamp(1rem, 1.5vw, 1.35rem);
+    width: 100%;
+}
+
+@media (max-width: 1199.98px) and (min-width: 992px) {
+    .dealifly-feature-grid-5 {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 991.98px) and (min-width: 576px) {
+    .dealifly-feature-grid-5 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 575.98px) {
+    .dealifly-feature-grid-5 {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Customer Journey Steps - Robust Pipeline with Permanent Arrows */
+body .dealifly-journey-wrapper,
+.dealifly-journey-wrapper {
+    background: rgba(14, 13, 22, 0.95) !important;
+    border: 1px solid rgba(155, 130, 232, 0.3) !important;
+    border-radius: 20px !important;
+    padding: clamp(1.25rem, 2.5vw, 2.25rem) !important;
+    width: 100% !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5) !important;
+    position: relative !important;
+    z-index: 1 !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+}
+
+body .dealifly-journey-steps,
+.dealifly-journey-steps {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 0.75rem !important;
+    margin: 0 !important;
+    padding: 0.35rem 0 !important;
+    list-style: none !important;
+    width: 100% !important;
+    min-width: 760px !important;
+}
+
+body .dealifly-journey-step,
+body.dealifly-solutions-page .dealifly-journey-step,
+body.dealifly-homepage .dealifly-journey-step,
+.dealifly-journey-step {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex: 1 1 0% !important;
+    min-width: 105px !important;
+    background: #181528 !important;
+    border: 1px solid rgba(155, 130, 232, 0.45) !important;
+    border-radius: 14px !important;
+    padding: 1.25rem 0.65rem !important;
+    text-align: center !important;
+    position: relative !important;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5) !important;
+    transition: all 220ms ease !important;
+    z-index: 2 !important;
+}
+
+body .dealifly-journey-step:hover,
+.dealifly-journey-step:hover {
+    border-color: #A28DF7 !important;
+    background: #231E3A !important;
+    transform: translateY(-4px) !important;
+    box-shadow: 0 12px 30px rgba(118, 87, 217, 0.35) !important;
+}
+
+body .dealifly-journey-step__num,
+.dealifly-journey-step__num {
+    display: inline-block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    font-family: var(--df-font-mono, monospace) !important;
+    font-size: 0.75rem !important;
+    font-weight: 700 !important;
+    color: #E2DAFF !important;
+    background: rgba(143, 122, 232, 0.28) !important;
+    border: 1px solid rgba(155, 130, 232, 0.5) !important;
+    padding: 0.25rem 0.55rem !important;
+    border-radius: 6px !important;
+    margin-bottom: 0.65rem !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.06em !important;
+    white-space: nowrap !important;
+}
+
+body .dealifly-journey-step__name,
+.dealifly-journey-step__name {
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    font-size: 0.98rem !important;
+    font-weight: 700 !important;
+    color: #FFFFFF !important;
+    margin: 0 !important;
+    line-height: 1.25 !important;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5) !important;
+    white-space: normal !important;
+}
+
+body .dealifly-journey-arrow,
+.dealifly-journey-arrow {
+    opacity: 1 !important;
+    visibility: visible !important;
+    color: #9B82E8 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex-shrink: 0 !important;
+    width: 28px !important;
+    height: 28px !important;
+    margin: 0 !important;
+}
+
+body .dealifly-journey-arrow svg,
+.dealifly-journey-arrow svg {
+    width: 24px !important;
+    height: 24px !important;
+    stroke: #9B82E8 !important;
+    stroke-width: 3px !important;
+    display: block !important;
+    flex-shrink: 0 !important;
+}
+
+/* Content Formats Pills Cloud */
+.dealifly-formats-card {
+    background: rgba(14, 13, 22, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    padding: clamp(1.75rem, 3vw, 2.5rem);
+    width: 100%;
+}
+
+.dealifly-formats-cloud {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.85rem;
+}
+
+.dealifly-format-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    padding: 0.65rem 1.25rem;
+    background: rgba(18, 18, 26, 0.85);
+    border: 1px solid rgba(155, 130, 232, 0.22);
+    border-radius: 30px;
+    color: #FFFFFF;
+    font-size: 0.9375rem;
+    font-weight: 500;
+    transition: all 200ms ease;
+}
+
+.dealifly-format-pill i,
+.dealifly-format-pill iconify-icon {
+    color: #8F7AE8;
+    font-size: 1rem;
+}
+
+.dealifly-format-pill:hover {
+    background: rgba(118, 87, 217, 0.18);
+    border-color: rgba(155, 130, 232, 0.5);
+    transform: translateY(-2px);
+    color: #FFFFFF;
+}
+
+/* ================================================================
+   UNIVERSAL CONTACT SECTION & FORM CARD (Matches User Design)
+   ================================================================ */
+.dealifly-contact-section {
+    padding: clamp(3rem, 6vw, 5.5rem) 0 !important;
+    background: #07070A !important;
+    position: relative !important;
+}
+
+.dealifly-contact-headline {
+    font-size: clamp(2rem, 3.8vw, 3rem) !important;
+    font-weight: 700 !important;
+    color: #FFFFFF !important;
+    letter-spacing: -0.02em !important;
+    margin-bottom: 1.5rem !important;
+}
+
+.dealifly-contact-benefit-list {
+    margin-bottom: 2rem !important;
+}
+
+.dealifly-contact-benefit-list li {
+    font-size: 1.05rem !important;
+    color: rgba(245, 245, 247, 0.9) !important;
+    line-height: 1.5 !important;
+}
+
+.dealifly-contact-bullet-icon {
+    width: 24px !important;
+    height: 24px !important;
+    border-radius: 50% !important;
+    background: rgba(143, 122, 232, 0.15) !important;
+    border: 1px solid rgba(155, 130, 232, 0.35) !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex-shrink: 0 !important;
+}
+
+.dealifly-contact-bullet-text {
+    font-size: 1rem !important;
+    font-weight: 500 !important;
+    color: #FFFFFF !important;
+}
+
+.dealifly-contact-editorial {
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+.dealifly-contact-info-block {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 1.25rem !important;
+    padding-top: 1.75rem !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+    margin-top: 0.5rem !important;
+}
+
+.dealifly-contact-info-item {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0.25rem !important;
+}
+
+.dealifly-contact-info-label {
+    font-size: 0.72rem !important;
+    font-weight: 600 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.08em !important;
+    color: rgba(245, 245, 247, 0.5) !important;
+}
+
+.dealifly-contact-info-value {
+    font-size: 1rem !important;
+    font-weight: 600 !important;
+    color: #FFFFFF !important;
+    text-decoration: none !important;
+    transition: color 180ms ease !important;
+}
+
+a.dealifly-contact-info-value:hover {
+    color: #A28DF7 !important;
+}
+
+/* Right Column: Premium Form Card */
+.dealifly-contact-form-card {
+    background: #0D0D12 !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    border-radius: 20px !important;
+    padding: clamp(1.75rem, 3vw, 2.5rem) !important;
+    box-shadow: 0 24px 60px -12px rgba(0, 0, 0, 0.8) !important;
+    position: relative !important;
+}
+
+.dealifly-contact-form-title {
+    font-size: 1.2rem !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.05em !important;
+    text-transform: uppercase !important;
+    color: #FFFFFF !important;
+}
+
+.dealifly-contact-form-desc {
+    font-size: 0.9rem !important;
+    line-height: 1.5 !important;
+    color: rgba(245, 245, 247, 0.65) !important;
+}
+
+.dealifly-contact-label {
+    display: block !important;
+    font-size: 0.82rem !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.02em !important;
+    color: rgba(245, 245, 247, 0.85) !important;
+    margin-bottom: 0.4rem !important;
+}
+
+.dealifly-req-star {
+    color: #8F7AE8 !important;
+}
+
+.dealifly-contact-input,
+.dealifly-contact-select,
+.dealifly-contact-textarea {
+    background-color: rgba(255, 255, 255, 0.04) !important;
+    border: 1px solid rgba(255, 255, 255, 0.12) !important;
+    border-radius: 10px !important;
+    color: #FFFFFF !important;
+    padding: 0.78rem 1rem !important;
+    font-size: 0.95rem !important;
+    line-height: 1.5 !important;
+    transition: all 200ms ease !important;
+}
+
+.dealifly-contact-input::placeholder,
+.dealifly-contact-textarea::placeholder {
+    color: rgba(255, 255, 255, 0.35) !important;
+}
+
+.dealifly-contact-select option {
+    background-color: #12111A !important;
+    color: #FFFFFF !important;
+}
+
+.dealifly-contact-input:focus,
+.dealifly-contact-select:focus,
+.dealifly-contact-textarea:focus {
+    background-color: rgba(255, 255, 255, 0.06) !important;
+    border-color: #8F7AE8 !important;
+    box-shadow: 0 0 0 3px rgba(118, 87, 217, 0.25) !important;
+    outline: none !important;
+    color: #FFFFFF !important;
+}
+
+.dealifly-contact-submit {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 0.65rem !important;
+    background: linear-gradient(135deg, #7657D9 0%, #6328FF 100%) !important;
+    color: #FFFFFF !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+    border-radius: 12px !important;
+    padding: 0.92rem 1.75rem !important;
+    font-size: 1rem !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.01em !important;
+    cursor: pointer !important;
+    box-shadow: 0 8px 24px -4px rgba(99, 40, 255, 0.45) !important;
+    transition: transform 200ms ease, box-shadow 200ms ease, filter 200ms ease !important;
+}
+
+.dealifly-contact-submit:hover {
+    transform: translateY(-2px) !important;
+    filter: brightness(1.1) !important;
+    box-shadow: 0 12px 32px -4px rgba(99, 40, 255, 0.6) !important;
+    color: #FFFFFF !important;
+}
+
+
+/* ================================================================
+   UNIVERSAL FOOTER STYLING (Matches Screenshot media_1791299892580)
+   ================================================================ */
+.dealifly-footer {
+    background: #08080C !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
+    position: relative !important;
+    z-index: 1 !important;
+    width: 100% !important;
+}
+
+/* Force zero browser default blue underlines anywhere in footer */
+.dealifly-footer a,
+.dealifly-footer a:link,
+.dealifly-footer a:visited,
+.dealifly-footer a:hover,
+.dealifly-footer a:focus,
+.dealifly-footer a:active,
+.dealifly-footer .dealifly-footer__link,
+.dealifly-footer .dealifly-footer__contact-val,
+.dealifly-footer .dealifly-footer__legal-link,
+.dealifly-footer .dealifly-footer__brand {
+    text-decoration: none !important;
+    text-decoration-line: none !important;
+    outline: none !important;
+}
+
+.dealifly-footer a:not(.dealifly-footer__submit):not(.dealifly-footer__whatsapp) {
+    color: rgba(245, 245, 247, 0.65) !important;
+    text-decoration: none !important;
+}
+
+.dealifly-footer a:not(.dealifly-footer__submit):not(.dealifly-footer__whatsapp):hover {
+    color: #FFFFFF !important;
+    text-decoration: none !important;
+}
+
+.dealifly-footer-inner {
+    padding-top: clamp(3.5rem, 5vw, 4.5rem) !important;
+    padding-bottom: clamp(1.75rem, 2.8vw, 2.5rem) !important;
+}
+
+.dealifly-footer__col-title {
+    font-size: 0.95rem !important;
+    font-weight: 600 !important;
+    letter-spacing: -0.01em !important;
+    color: #FFFFFF !important;
+    margin-top: 0 !important;
+    margin-bottom: 1.25rem !important;
+    line-height: 1.3 !important;
+}
+
+.dealifly-footer__brand {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 0.65rem !important;
+    text-decoration: none !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    line-height: 1 !important;
+}
+
+.dealifly-footer__brand-mark {
+    width: 2.25rem !important;
+    height: 2.25rem !important;
+    object-fit: contain !important;
+    display: block !important;
+}
+
+.dealifly-footer__brand-name {
+    font-size: 1.35rem !important;
+    font-weight: 700 !important;
+    letter-spacing: -0.025em !important;
+    color: #FFFFFF !important;
+    line-height: 1 !important;
+}
+
+.dealifly-footer__tagline {
+    font-size: 0.88rem !important;
+    line-height: 1.6 !important;
+    color: rgba(245, 245, 247, 0.65) !important;
+    margin-top: 0.85rem !important;
+    margin-bottom: 1.25rem !important;
+    max-width: 310px !important;
+}
+
+.dealifly-footer__form {
+    max-width: 300px !important;
+    width: 100% !important;
+    margin-bottom: 0.75rem !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 0.5rem !important;
+}
+
+.dealifly-footer__input {
+    background-color: rgba(255, 255, 255, 0.04) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    color: #FFFFFF !important;
+    border-radius: 8px !important;
+    padding: 0.55rem 0.85rem !important;
+    font-size: 0.86rem !important;
+    transition: border-color 180ms ease, background-color 180ms ease !important;
+}
+
+.dealifly-footer__input::placeholder {
+    color: rgba(255, 255, 255, 0.35) !important;
+}
+
+.dealifly-footer__input:focus {
+    border-color: rgba(143, 122, 232, 0.5) !important;
+    background-color: rgba(255, 255, 255, 0.06) !important;
+    outline: none !important;
+    box-shadow: 0 0 0 2px rgba(118, 87, 217, 0.15) !important;
+    color: #FFFFFF !important;
+}
+
+.dealifly-footer__submit {
+    background-color: rgba(255, 255, 255, 0.08) !important;
+    border: 1px solid rgba(255, 255, 255, 0.12) !important;
+    color: #FFFFFF !important;
+    width: 34px !important;
+    height: 34px !important;
+    border-radius: 50% !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    transition: background-color 180ms ease, border-color 180ms ease !important;
+}
+
+.dealifly-footer__submit:hover {
+    background-color: rgba(143, 122, 232, 0.25) !important;
+    border-color: rgba(143, 122, 232, 0.45) !important;
+    color: #FFFFFF !important;
+}
+
+.dealifly-footer__whatsapp {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 0.5rem !important;
+    padding: 0.45rem 0.95rem !important;
+    border: 1px solid rgba(37, 211, 102, 0.25) !important;
+    border-radius: 999px !important;
+    background: rgba(37, 211, 102, 0.06) !important;
+    color: #8ff0b1 !important;
+    font-size: 0.8125rem !important;
+    font-weight: 600 !important;
+    text-decoration: none !important;
+    margin-top: 0.35rem !important;
+    transition: background-color 180ms ease, border-color 180ms ease, color 180ms ease !important;
+}
+
+.dealifly-footer__whatsapp:hover {
+    background: rgba(37, 211, 102, 0.14) !important;
+    border-color: rgba(37, 211, 102, 0.4) !important;
+    color: #bbf7d0 !important;
+}
+
+.dealifly-footer__link,
+.dealifly-footer a.dealifly-footer__link {
+    font-size: 0.86rem !important;
+    font-weight: 400 !important;
+    color: rgba(245, 245, 247, 0.65) !important;
+    text-decoration: none !important;
+    line-height: 1.5 !important;
+    transition: color 180ms ease, transform 180ms ease !important;
+    display: inline-block !important;
+}
+
+.dealifly-footer__link:hover,
+.dealifly-footer a.dealifly-footer__link:hover {
+    color: #FFFFFF !important;
+    transform: translateX(2px) !important;
+    text-decoration: none !important;
+}
+
+.dealifly-footer__contact-item {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0.2rem !important;
+}
+
+.dealifly-footer__contact-label {
+    font-size: 0.72rem !important;
+    font-weight: 600 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.06em !important;
+    color: rgba(245, 245, 247, 0.45) !important;
+}
+
+.dealifly-footer__contact-val,
+.dealifly-footer a.dealifly-footer__contact-val {
+    font-size: 0.88rem !important;
+    font-weight: 500 !important;
+    color: rgba(255, 255, 255, 0.85) !important;
+    line-height: 1.45 !important;
+    text-decoration: none !important;
+}
+
+.dealifly-footer a.dealifly-footer__contact-val:hover {
+    color: #8F7AE8 !important;
+    text-decoration: none !important;
+}
+
+.dealifly-footer__divider {
+    height: 1px !important;
+    width: 100% !important;
+    background: rgba(255, 255, 255, 0.08) !important;
+    margin-top: clamp(2.5rem, 3.8vw, 3.5rem) !important;
+    margin-bottom: 1.5rem !important;
+}
+
+.dealifly-footer__bottom {
+    padding-top: 0.25rem !important;
+}
+
+.dealifly-footer__legal-link,
+.dealifly-footer a.dealifly-footer__legal-link {
+    font-size: 0.8125rem !important;
+    color: rgba(245, 245, 247, 0.55) !important;
+    text-decoration: none !important;
+    transition: color 180ms ease !important;
+}
+
+.dealifly-footer__legal-link:hover,
+.dealifly-footer a.dealifly-footer__legal-link:hover {
+    color: #FFFFFF !important;
+    text-decoration: none !important;
+}
+
+.dealifly-footer__copyright {
+    font-size: 0.8125rem !important;
+    color: rgba(245, 245, 247, 0.45) !important;
+}
+
+/* ================================================================
+   Dealifly Step Process Pipeline (Outbound Lead Gen / How It Works)
+   ================================================================ */
+.dealifly-process-flow-wrap {
+    position: relative;
+    width: 100%;
+    margin-top: 2rem;
+}
+
+/* Continuous glowing gradient track line across columns */
+.dealifly-process-flow-track {
+    position: absolute;
+    top: 9px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #A855F7 0%, #818CF8 35%, #6366F1 70%, #38BDF8 100%);
+    box-shadow: 0 0 12px rgba(168, 85, 247, 0.65), 0 0 24px rgba(129, 140, 248, 0.4);
+    z-index: 1;
+    pointer-events: none;
+    border-radius: 2px;
+}
+
+/* 4-column step cards grid */
+.dealifly-process-flow-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: clamp(1.5rem, 2.5vw, 2.5rem);
+    width: 100%;
+    position: relative;
+    z-index: 2;
+}
+
+/* 3-column step cards grid for Inbound Authority */
+.dealifly-process-flow-grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: clamp(1.5rem, 2.5vw, 2.5rem);
+    width: 100%;
+    position: relative;
+    z-index: 2;
+}
+
+/* 5-column step cards grid for Content Marketing Process */
+.dealifly-process-flow-grid-5 {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: clamp(1rem, 1.8vw, 1.75rem);
+    width: 100%;
+    position: relative;
+    z-index: 2;
+}
+
+.dealifly-process-flow-item {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    position: relative;
+    padding-right: clamp(0.75rem, 1.5vw, 1.5rem);
+}
+
+/* Vertical divider line between steps on desktop */
+@media (min-width: 992px) {
+    .dealifly-process-flow-grid-3 .dealifly-process-flow-item:not(:last-child)::after,
+    .dealifly-process-flow-grid .dealifly-process-flow-item:not(:last-child)::after,
+    .dealifly-process-flow-grid-5 .dealifly-process-flow-item:not(:last-child)::after {
+        content: '';
+        position: absolute;
+        right: 0;
+        top: 36px;
+        bottom: 8px;
+        width: 1px;
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.18) 0%, rgba(255, 255, 255, 0.05) 75%, transparent 100%);
+    }
+}
+
+/* Top glowing node container & dot */
+.dealifly-process-flow-node-box {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 0;
+    height: 20px;
+    margin-bottom: 1.35rem;
+    position: relative;
+}
+
+.dealifly-process-flow-dot {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: #FFFFFF;
+    border: 2.5px solid #B7A5F5;
+    box-shadow: 0 0 0 3px rgba(168, 85, 247, 0.35), 0 0 16px 4px rgba(168, 85, 247, 0.75);
+    display: inline-block;
+    flex-shrink: 0;
+    transition: transform 240ms ease, box-shadow 240ms ease;
+}
+
+/* Step Body - Clean borderless layout */
+.dealifly-process-flow-card {
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    box-shadow: none;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    transition: transform 220ms ease;
+}
+
+.dealifly-process-flow-item:hover .dealifly-process-flow-dot {
+    transform: scale(1.25);
+    box-shadow: 0 0 0 4px rgba(183, 165, 245, 0.6), 0 0 24px 6px rgba(168, 85, 247, 0.95);
+}
+
+.dealifly-process-flow-item:hover .dealifly-process-flow-card {
+    transform: translateY(-2px);
+}
+
+.dealifly-process-flow-item:hover .dealifly-process-flow-pill {
+    border-color: rgba(183, 165, 245, 0.7);
+    box-shadow: 0 0 16px rgba(147, 51, 234, 0.45);
+}
+
+/* Step Pill Badge */
+.dealifly-process-flow-pill {
+    align-self: flex-start;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.35rem 0.95rem;
+    font-size: 0.8125rem;
+    font-weight: 700;
+    font-family: var(--dealifly-font-sans, "Plus Jakarta Sans", sans-serif);
+    letter-spacing: 0.02em;
+    color: #FFFFFF;
+    background: linear-gradient(135deg, rgba(147, 51, 234, 0.35), rgba(79, 70, 229, 0.25));
+    border: 1px solid rgba(168, 85, 247, 0.45);
+    border-radius: 8px;
+    margin-bottom: 1.15rem;
+    box-shadow: 0 0 12px rgba(147, 51, 234, 0.25);
+    transition: border-color 200ms ease, box-shadow 200ms ease;
+}
+
+/* Title & Text */
+.dealifly-process-flow-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #FFFFFF;
+    margin: 0 0 0.75rem;
+    line-height: 1.35;
+    letter-spacing: -0.015em;
+}
+
+.dealifly-process-flow-text {
+    font-size: 0.875rem;
+    color: rgba(245, 245, 247, 0.75);
+    line-height: 1.65;
+    margin: 0;
+}
+
+/* Responsive queries */
+@media (max-width: 1199.98px) and (min-width: 768px) {
+    .dealifly-process-flow-grid-5 {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .dealifly-process-flow-grid-5 + .dealifly-process-flow-track,
+    .dealifly-process-flow-wrap:has(.dealifly-process-flow-grid-5) .dealifly-process-flow-track {
+        display: none;
+    }
+}
+
+@media (max-width: 1140px) and (min-width: 768px) {
+    .dealifly-process-flow-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .dealifly-process-flow-track {
+        display: none;
+    }
+}
+
+@media (max-width: 991.98px) and (min-width: 680px) {
+    .dealifly-process-flow-grid-3 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .dealifly-process-flow-track {
+        display: none;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .dealifly-process-flow-grid,
+    .dealifly-process-flow-grid-3,
+    .dealifly-process-flow-grid-5 {
+        grid-template-columns: 1fr;
+    }
+    .dealifly-process-flow-track {
+        display: none;
+    }
+}
+
+/* ================================================================
+   Dealifly 2x Growth 2x2 Grid (Outbound + Inbound = 2x Growth)
+   ================================================================ */
+.dealifly-growth-2x-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: clamp(1.25rem, 2.5vw, 2rem);
+    width: 100%;
+}
+
+.dealifly-growth-2x-card {
+    background: rgba(14, 13, 22, 0.82);
+    border: 1px solid rgba(255, 255, 255, 0.085);
+    border-radius: 20px;
+    padding: clamp(1.75rem, 3vw, 2.5rem);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+    transition: transform 220ms ease, border-color 220ms ease, box-shadow 220ms ease, background-color 220ms ease;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+.dealifly-growth-2x-card:hover {
+    transform: translateY(-3px);
+    border-color: rgba(155, 130, 232, 0.35);
+    background: rgba(18, 16, 28, 0.95);
+    box-shadow: 0 16px 36px -12px rgba(0, 0, 0, 0.75), 0 0 20px rgba(118, 87, 217, 0.12);
+}
+
+.dealifly-growth-2x-icon {
+    width: 46px;
+    height: 46px;
+    border-radius: 12px !important;
+    background: rgba(124, 58, 237, 0.2) !important;
+    border: 1.5px solid #7C3AED !important;
+    color: #C4B5FD !important;
+    box-shadow: 0 0 14px rgba(124, 58, 237, 0.4) !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.35rem;
+    margin-bottom: 1.5rem;
+    flex-shrink: 0;
+    transition: transform 200ms ease, background-color 200ms ease, border-color 200ms ease, color 200ms ease, box-shadow 200ms ease;
+}
+
+.dealifly-growth-2x-card:hover .dealifly-growth-2x-icon {
+    transform: scale(1.08);
+    background: rgba(124, 58, 237, 0.35) !important;
+    border-color: #A78BFA !important;
+    box-shadow: 0 0 20px rgba(139, 92, 246, 0.75) !important;
+    color: #FFFFFF !important;
+}
+
+.dealifly-growth-2x-title {
+    font-size: clamp(1.25rem, 1.8vw, 1.5rem);
+    font-weight: 700;
+    color: #FFFFFF;
+    margin: 0 0 0.75rem;
+    letter-spacing: -0.02em;
+    line-height: 1.25;
+}
+
+.dealifly-growth-2x-text {
+    font-size: 0.9375rem;
+    color: rgba(245, 245, 247, 0.78);
+    line-height: 1.65;
+    margin: 0 0 1.5rem;
+    flex-grow: 1;
+}
+
+.dealifly-growth-2x-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #9B82E8;
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 180ms ease, gap 180ms ease;
+    align-self: flex-start;
+}
+
+.dealifly-growth-2x-link i {
+    font-size: 1rem;
+    transition: transform 180ms ease;
+}
+
+.dealifly-growth-2x-card:hover .dealifly-growth-2x-link i {
+    transform: translateX(4px);
+}
+
+@media (max-width: 860px) {
+    .dealifly-growth-2x-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ================================================================
+   Dealifly Content Formats Compact Badges / Chips Grid
+   ================================================================ */
+.dealifly-format-chips-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: clamp(0.85rem, 1.4vw, 1.15rem);
+    width: 100%;
+}
+
+.dealifly-format-chip {
+    background: rgba(14, 13, 22, 0.78);
+    border: 1px solid rgba(255, 255, 255, 0.085);
+    border-radius: 14px;
+    padding: clamp(0.85rem, 1.2vw, 1.05rem) clamp(1rem, 1.4vw, 1.35rem);
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    transition: transform 200ms ease, border-color 200ms ease, background-color 200ms ease, box-shadow 200ms ease;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+.dealifly-format-chip:hover {
+    transform: translateY(-2px);
+    border-color: rgba(155, 130, 232, 0.35);
+    background: rgba(20, 18, 30, 0.95);
+    box-shadow: 0 10px 24px -8px rgba(0, 0, 0, 0.6), 0 0 16px rgba(118, 87, 217, 0.15);
+}
+
+.dealifly-format-chip__icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px !important;
+    background: rgba(124, 58, 237, 0.2) !important;
+    border: 1.5px solid #7C3AED !important;
+    color: #C4B5FD !important;
+    box-shadow: 0 0 10px rgba(124, 58, 237, 0.35) !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.15rem;
+    flex-shrink: 0;
+    transition: transform 180ms ease, background-color 180ms ease, color 180ms ease;
+}
+
+.dealifly-format-chip:hover .dealifly-format-chip__icon {
+    transform: scale(1.08);
+    background: rgba(118, 87, 217, 0.25);
+    color: #FFFFFF;
+}
+
+.dealifly-format-chip__name {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #FFFFFF;
+    margin: 0;
+    letter-spacing: -0.01em;
+    line-height: 1.25;
+}
+
+@media (max-width: 1140px) and (min-width: 768px) {
+    .dealifly-format-chips-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 767.98px) {
+    .dealifly-format-chips-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ================================================================
+   Dealifly Process Row List (Lead Generation ICP Section)
+   - Stacked horizontal rounded rows with circular number badges
+   - Dealifly purple / magenta glow theme styling
+   ================================================================ */
+.dealifly-process-row-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.15rem;
+    width: 100%;
+}
+
+.dealifly-process-row-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.75rem;
+    padding: 1.6rem 2rem;
+    background: rgba(14, 13, 22, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.09);
+    border-radius: 18px;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    transition: transform 220ms ease, border-color 220ms ease, background-color 220ms ease, box-shadow 220ms ease;
+    position: relative;
+    box-shadow: 0 8px 24px -10px rgba(0, 0, 0, 0.6);
+}
+
+.dealifly-process-row-card:hover {
+    transform: translateY(-2px);
+    background: rgba(20, 18, 30, 0.95);
+    border-color: rgba(124, 58, 237, 0.55) !important;
+    box-shadow: 0 14px 34px -10px rgba(0, 0, 0, 0.8), 0 0 24px rgba(124, 58, 237, 0.25) !important;
+}
+
+.dealifly-process-row-badge {
+    flex-shrink: 0;
+    width: 48px;
+    height: 48px;
+    border-radius: 12px !important;
+    border: 1.5px solid #7C3AED !important;
+    background: radial-gradient(circle, rgba(124, 58, 237, 0.3) 0%, rgba(91, 33, 182, 0.15) 100%) !important;
+    color: #FFFFFF !important;
+    font-size: 0.95rem;
+    font-weight: 700;
+    font-family: var(--dealifly-font-sans, "Plus Jakarta Sans", sans-serif);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 18px rgba(124, 58, 237, 0.5) !important;
+    margin-top: 0.15rem;
+    transition: transform 200ms ease, border-color 200ms ease, box-shadow 200ms ease;
+}
+
+.dealifly-process-row-card:hover .dealifly-process-row-badge {
+    border-color: #A78BFA !important;
+    box-shadow: 0 0 26px rgba(139, 92, 246, 0.85), 0 0 12px rgba(124, 58, 237, 0.7) !important;
+    transform: scale(1.06);
+}
+
+.dealifly-process-row-content {
+    flex-grow: 1;
+}
+
+.dealifly-process-row-title {
+    font-size: 1.18rem;
+    font-weight: 700;
+    color: #FFFFFF;
+    margin: 0 0 0.45rem;
+    line-height: 1.35;
+    letter-spacing: -0.015em;
+    font-family: var(--dealifly-font-sans, "Plus Jakarta Sans", sans-serif);
+}
+
+.dealifly-process-row-text {
+    font-size: 0.95rem;
+    color: rgba(245, 245, 247, 0.75);
+    line-height: 1.65;
+    margin: 0;
+}
+
+@media (max-width: 767.98px) {
+    .dealifly-process-row-card {
+        padding: 1.35rem 1.25rem;
+        gap: 1.15rem;
+    }
+    
+    .dealifly-process-row-badge {
+        width: 40px;
+        height: 40px;
+        font-size: 0.85rem;
+    }
+    
+    .dealifly-process-row-title {
+        font-size: 1.05rem;
+    }
+    
+    .dealifly-process-row-text {
+        font-size: 0.875rem;
+    }
+}
+
+/* ================================================================
+   Dealifly 2x2 Problem Grid (The Problem We Solve)
+   - 2-column, 2-row rounded cards matching modern dark theme
+   ================================================================ */
+.dealifly-problem-2x2-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+    width: 100%;
+}
+
+.dealifly-problem-2x2-card {
+    background: rgba(14, 13, 22, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.09);
+    border-radius: 18px;
+    padding: 1.6rem 1.85rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: transform 220ms ease, border-color 220ms ease, background-color 220ms ease, box-shadow 220ms ease;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 8px 24px -10px rgba(0, 0, 0, 0.6);
+}
+
+.dealifly-problem-2x2-card:hover {
+    transform: translateY(-2px);
+    border-color: rgba(168, 85, 247, 0.45);
+    background: rgba(20, 18, 30, 0.95);
+    box-shadow: 0 14px 34px -10px rgba(0, 0, 0, 0.8), 0 0 24px rgba(168, 85, 247, 0.15);
+}
+
+.dealifly-problem-2x2-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #FFFFFF;
+    margin: 0 0 0.45rem;
+    letter-spacing: -0.015em;
+    line-height: 1.35;
+    font-family: var(--dealifly-font-sans, "Plus Jakarta Sans", sans-serif);
+}
+
+.dealifly-problem-2x2-text {
+    font-size: 0.9375rem;
+    color: rgba(245, 245, 247, 0.75);
+    line-height: 1.6;
+    margin: 0;
+}
+
+@media (max-width: 767.98px) {
+    .dealifly-problem-2x2-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .dealifly-problem-2x2-card {
+        padding: 1.35rem 1.25rem;
+    }
+}
+
+/* ================================================================
+   Dealifly Industry Jump Navigation & Service Grid
+   ================================================================ */
+.dealifly-industry-jump-bar {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    margin: 2rem 0 1rem;
+}
+
+.dealifly-industry-jump-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.6rem 1.2rem;
+    border-radius: 999px;
+    background: rgba(18, 16, 28, 0.85);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: rgba(245, 245, 247, 0.85);
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    backdrop-filter: blur(10px);
+}
+
+.dealifly-industry-jump-pill:hover,
+.dealifly-industry-jump-pill.active {
+    background: rgba(168, 85, 247, 0.18);
+    border-color: rgba(183, 165, 245, 0.6);
+    color: #FFFFFF;
+    box-shadow: 0 0 16px rgba(168, 85, 247, 0.25);
+    transform: translateY(-1px);
+}
+
+.dealifly-industry-block {
+    padding: clamp(3.5rem, 6vw, 5.5rem) 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+    position: relative;
+}
+
+.dealifly-industry-block:last-of-type {
+    border-bottom: none;
+}
+
+.dealifly-industry-tag-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    padding: 0.35rem 0.95rem;
+    border-radius: 999px;
+    background: rgba(168, 85, 247, 0.12);
+    border: 1px solid rgba(183, 165, 245, 0.35);
+    color: #B7A5F5;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    margin-bottom: 1.25rem;
+    letter-spacing: 0.02em;
+}
+
+.dealifly-services-16-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    width: 100%;
+}
+
+@media (max-width: 1199.98px) {
+    .dealifly-services-16-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 991.98px) {
+    .dealifly-services-16-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 575.98px) {
+    .dealifly-services-16-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* 2x2 Card Icon Badge */
+.dealifly-card-icon-badge {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px !important;
+    background: rgba(124, 58, 237, 0.2) !important;
+    border: 1.5px solid #7C3AED !important;
+    color: #C4B5FD !important;
+    box-shadow: 0 0 14px rgba(124, 58, 237, 0.45) !important;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    margin-bottom: 1.15rem;
+    flex-shrink: 0;
+    transition: transform 200ms ease, background-color 200ms ease, border-color 200ms ease, color 200ms ease, box-shadow 200ms ease;
+}
+
+.dealifly-problem-2x2-card:hover .dealifly-card-icon-badge {
+    transform: scale(1.08);
+    background: rgba(124, 58, 237, 0.35) !important;
+    border-color: #A78BFA !important;
+    color: #FFFFFF !important;
+    box-shadow: 0 0 20px rgba(139, 92, 246, 0.75) !important;
+}
+
+/* Universal square badge rule for all symbol and icon badge containers across solution pages */
+.dealifly-feature-card__badge {
+    border-radius: 10px !important;
+}
+
+.dealifly-approach-box__icon,
+.dealifly-growth-2x-icon,
+.dealifly-card-icon-badge,
+.dealifly-process-row-badge,
+.dealifly-hub-card__icon {
+    border-radius: 12px !important;
+}
+
+.dealifly-pipeline-number,
+.dealifly-pipeline-card__badge,
+.dealifly-meta-card__icon,
+.dealifly-format-chip__icon {
+    border-radius: 10px !important;
+}
+
+/* Fail-safe: Pure CSS preloader auto-dismiss (zero dependence on JS) */
+@keyframes dealiflyPreloaderAutoDismiss {
+    0%, 60% {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+    }
+    99% {
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+    }
+    100% {
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        display: none !important;
+    }
+}
+
+.preloader {
+    animation: dealiflyPreloaderAutoDismiss 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.5s forwards !important;
+}
+
+.preloader.preloader--loaded,
+.preloader--loaded {
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+    display: none !important;
+}
+
+/* Hero Section Action Buttons - Sleek Rounded Rectangle Matching Design Reference */
+.dealifly-solution-hero-actions a,
+.dealifly-solution-hero-actions .dealifly-btn-primary,
+.dealifly-solution-hero-actions .dealifly-btn-secondary,
+.ind-hero__buttons a,
+.ind-hero__buttons .dealifly-btn-primary,
+.ind-hero__buttons .dealifly-btn-secondary,
+.ind-hero__buttons .ind-btn-primary,
+.ind-hero__buttons .ind-btn-ghost {
+    border-radius: 10px !important;
+    padding: 0.82rem 1.85rem !important;
+    font-size: 0.98rem !important;
+    font-weight: 600 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 0.5rem !important;
+    text-decoration: none !important;
+    cursor: pointer !important;
+    white-space: nowrap !important;
+    transition: transform 200ms ease, box-shadow 200ms ease, background 200ms ease, border-color 200ms ease !important;
+}
+
+.dealifly-solution-hero-actions .dealifly-btn-primary,
+.ind-hero__buttons .dealifly-btn-primary,
+.ind-hero__buttons .ind-btn-primary {
+    background: #6342ff !important;
+    background: linear-gradient(135deg, #6c4cee 0%, #5b3af0 100%) !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+    color: #FFFFFF !important;
+    box-shadow: 0 4px 18px rgba(99, 66, 255, 0.45) !important;
+}
+
+.dealifly-solution-hero-actions .dealifly-btn-primary:hover,
+.ind-hero__buttons .dealifly-btn-primary:hover,
+.ind-hero__buttons .ind-btn-primary:hover {
+    transform: translateY(-2px) !important;
+    background: #7454ff !important;
+    background: linear-gradient(135deg, #7858ff 0%, #6846ff 100%) !important;
+    box-shadow: 0 8px 24px rgba(99, 66, 255, 0.6) !important;
+    color: #FFFFFF !important;
+}
+
+.dealifly-solution-hero-actions .dealifly-btn-secondary,
+.ind-hero__buttons .dealifly-btn-secondary,
+.ind-hero__buttons .ind-btn-ghost {
+    background: rgba(18, 18, 24, 0.75) !important;
+    border: 1px solid rgba(255, 255, 255, 0.22) !important;
+    color: #FFFFFF !important;
+    box-shadow: none !important;
+    backdrop-filter: blur(8px) !important;
+    -webkit-backdrop-filter: blur(8px) !important;
+}
+
+.dealifly-solution-hero-actions .dealifly-btn-secondary:hover,
+.ind-hero__buttons .dealifly-btn-secondary:hover,
+.ind-hero__buttons .ind-btn-ghost:hover {
+    transform: translateY(-2px) !important;
+    background: rgba(255, 255, 255, 0.1) !important;
+    border-color: rgba(255, 255, 255, 0.35) !important;
+    color: #FFFFFF !important;
+}
+

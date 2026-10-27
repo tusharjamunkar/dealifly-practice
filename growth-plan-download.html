@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Download the Dealifly Growth Plan — actionable B2B marketing playbooks, recruitment pipeline frameworks, e-commerce scale strategies, and automation blueprints.">
+    <meta name="author" content="Dealifly">
+    <title>Download Your Growth Plan | Dealifly</title>
+
+    <link rel="icon" href="assets/img/dealifly-logo.png" type="image/png">
+    <link rel="apple-touch-icon" href="assets/img/dealifly-logo.png">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="assets/css/bootstrap.css?v=20261014_mobile_fix_v11">
+    <link rel="stylesheet" href="assets/css/bootstrap-icons.css?v=20261014_mobile_fix_v11">
+    <link rel="stylesheet" href="assets/css/style.css?v=20261014_mobile_fix_v11">
+    <link rel="stylesheet" href="assets/css/dealifly-theme.css?v=20261014_mobile_fix_v11">
+    <link rel="stylesheet" href="assets/css/dealifly-solutions.css?v=20261014_mobile_fix_v11">
+    <link rel="stylesheet" href="assets/css/dealifly-home-refinement.css?v=20261014_mobile_fix_v11">
+
+    <style>
+        /* ============================================================
+           GROWTH PLAN DOWNLOAD PAGE (Matching Reference Image 2)
+           ============================================================ */
+        body.dealifly-download-page {
+            background-color: #060609 !important;
+            color: #f1f5f9;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .growth-download-hero {
+            position: relative;
+            padding: clamp(3.5rem, 6vw, 5.5rem) 0 2rem;
+            overflow: hidden;
+        }
+
+        .growth-download-hero__canvas {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            opacity: 0.75;
+            z-index: 0;
+        }
+
+        .growth-card-wrap {
+            position: relative;
+            z-index: 2;
+            max-width: 760px;
+            margin: 0 auto;
+        }
+
+        .growth-form-card {
+            background: rgba(18, 16, 28, 0.85);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: clamp(2rem, 4vw, 3.25rem);
+            box-shadow: 0 24px 60px rgba(0, 0, 0, 0.65), 0 0 32px rgba(168, 85, 247, 0.08);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+        }
+
+        .growth-plan-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: #b7a5f5;
+            background: rgba(168, 85, 247, 0.12);
+            border: 1px solid rgba(183, 165, 245, 0.35);
+            border-radius: 999px;
+            padding: 0.35rem 0.95rem;
+            margin-bottom: 1rem;
+            box-shadow: 0 0 14px rgba(168, 85, 247, 0.2);
+        }
+
+        .growth-page-title {
+            font-size: clamp(1.85rem, 3.4vw, 2.75rem);
+            font-weight: 750;
+            line-height: 1.2;
+            color: #ffffff;
+            margin-bottom: 0.65rem;
+        }
+
+        .growth-page-subtitle {
+            font-size: 1.02rem;
+            color: #94a3b8;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+        }
+
+        /* --- Input Fields (Styled exactly like Image 2 with brand purple underlines) --- */
+        .growth-field-group {
+            margin-bottom: 1.35rem;
+        }
+
+        .growth-form-label {
+            display: block;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #cbd5e1;
+            margin-bottom: 0.45rem;
+        }
+
+        .growth-form-label .req {
+            color: #b7a5f5;
+            margin-left: 2px;
+        }
+
+        .growth-form-input,
+        .growth-form-select,
+        .growth-form-textarea {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.035);
+            border: 1px solid rgba(255, 255, 255, 0.09);
+            border-bottom: 2.5px solid #a855f7;
+            border-radius: 10px 10px 4px 4px;
+            padding: 0.85rem 1.15rem;
+            color: #ffffff;
+            font-size: 0.95rem;
+            transition: all 200ms ease;
+            outline: none;
+        }
+
+        .growth-form-input::placeholder,
+        .growth-form-textarea::placeholder {
+            color: rgba(148, 163, 184, 0.65);
+        }
+
+        .growth-form-input:focus,
+        .growth-form-select:focus,
+        .growth-form-textarea:focus {
+            background: rgba(255, 255, 255, 0.06);
+            border-color: rgba(183, 165, 245, 0.4);
+            border-bottom-color: #b7a5f5;
+            box-shadow: 0 4px 20px rgba(168, 85, 247, 0.25);
+            color: #ffffff;
+        }
+
+        .growth-form-select {
+            appearance: none;
+            background-image: url("data:svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23b7a5f5' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 1.1rem center;
+            background-size: 14px;
+            cursor: pointer;
+        }
+
+        .growth-form-select option {
+            background-color: #0e0d16;
+            color: #ffffff;
+        }
+
+        .growth-form-textarea {
+            resize: vertical;
+            min-height: 110px;
+        }
+
+        /* Checkbox */
+        .growth-checkbox-wrap {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            margin: 1.5rem 0 1.75rem;
+        }
+
+        .growth-checkbox-wrap input[type="checkbox"] {
+            width: 19px;
+            height: 19px;
+            border-radius: 4px;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1.5px solid rgba(183, 165, 245, 0.6);
+            accent-color: #a855f7;
+            cursor: pointer;
+            margin-top: 0.2rem;
+            flex-shrink: 0;
+        }
+
+        .growth-checkbox-label {
+            font-size: 0.88rem;
+            color: #94a3b8;
+            cursor: pointer;
+            user-select: none;
+            line-height: 1.5;
+        }
+
+        .growth-checkbox-label a {
+            color: #b7a5f5;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+
+        .growth-checkbox-label a:hover {
+            color: #ffffff;
+        }
+
+        /* Submit Button */
+        .dealifly-btn-download-action {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.6rem;
+            background: linear-gradient(135deg, #7657d9 0%, #a855f7 100%);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            border-radius: 10px;
+            color: #ffffff;
+            font-size: 1.02rem;
+            font-weight: 700;
+            padding: 0.85rem 2.5rem;
+            cursor: pointer;
+            box-shadow: 0 4px 20px rgba(168, 85, 247, 0.45);
+            transition: all 250ms ease;
+        }
+
+        .dealifly-btn-download-action:hover {
+            background: linear-gradient(135deg, #8b68f5 0%, #b7a5f5 100%);
+            color: #ffffff;
+            box-shadow: 0 6px 28px rgba(183, 165, 245, 0.65);
+            transform: translateY(-2px);
+        }
+
+        .dealifly-btn-download-action:active {
+            transform: translateY(0);
+        }
+
+        @media (max-width: 575.98px) {
+            .dealifly-btn-download-action {
+                width: 100%;
+            }
+        }
+
+        /* Honeypot */
+        .growth-honeypot {
+            display: none !important;
+            visibility: hidden !important;
+        }
+
+        /* Success & Feedback Containers */
+        .growth-status-msg {
+            display: none;
+            padding: 1rem 1.25rem;
+            border-radius: 12px;
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .growth-status-msg.is-error {
+            display: block;
+            background: rgba(239, 68, 68, 0.15);
+            border: 1px solid rgba(239, 68, 68, 0.35);
+            color: #fca5a5;
+        }
+
+        .growth-success-card {
+            display: none;
+            text-align: center;
+            padding: 2.5rem 1.5rem;
+        }
+
+        .growth-success-icon {
+            width: 72px;
+            height: 72px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(168, 85, 247, 0.3) 0%, rgba(124, 58, 237, 0.1) 100%);
+            border: 2px solid #b7a5f5;
+            color: #ffffff;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 0 30px rgba(168, 85, 247, 0.5);
+        }
+    </style>
+</head>
+
+<body class="bg-dark-saas dealifly-homepage dealifly-download-page">
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg primary-header primary-header--transparent-light-alt dealifly-floating-nav">
+        <div class="container align-items-lg-center">
+            <a class="logo dealifly-nav-logo" href="./" aria-label="Dealifly home">
+                <img src="assets/img/dealifly-logo.png" alt="Dealifly" class="dealifly-nav-logo__mark" width="40" height="40">
+                <span class="dealifly-nav-logo__name">Dealifly</span>
+            </a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbar0"
+                aria-controls="navbar0" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="bi bi-list text-light fs-2"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbar0">
+                <ul class="navbar-nav flex-grow-1 justify-content-center mx-lg-4 mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="./">Home</a>
+                    </li>
+                    <li class="nav-item has-sub-menu navigation-1 dealifly-nav-dropdown">
+                        <a class="nav-link" href="javascript:void(0)">
+                            Services <i class="bi bi-chevron-down dealifly-nav-caret ms-1"></i>
+                        </a>
+                        <ul class="navigation-1__menu dealifly-dropdown-menu">
+                            <li class="navigation-1__menu-list">
+                                <a href="b2b-marketing" class="link navigation-1__menu-link">
+                                    <span class="dealifly-drop-title">B2B Growth Marketing</span>
+                                    <span class="dealifly-drop-sub">Full-funnel pipeline engine</span>
+                                </a>
+                            </li>
+                            <li class="navigation-1__menu-list">
+                                <a href="content-marketing" class="link navigation-1__menu-link">
+                                    <span class="dealifly-drop-title">Content Marketing</span>
+                                    <span class="dealifly-drop-sub">Demand gen &amp; thought leadership</span>
+                                </a>
+                            </li>
+                            <li class="navigation-1__menu-list">
+                                <a href="email-marketing-outreach" class="link navigation-1__menu-link">
+                                    <span class="dealifly-drop-title">Email Marketing</span>
+                                    <span class="dealifly-drop-sub">Cold outreach &amp; lifecycle sequences</span>
+                                </a>
+                            </li>
+                            <li class="navigation-1__menu-list">
+                                <a href="lead-research" class="link navigation-1__menu-link">
+                                    <span class="dealifly-drop-title">Lead Generation</span>
+                                    <span class="dealifly-drop-sub">ICP enrichment &amp; research</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item has-sub-menu navigation-1 dealifly-nav-dropdown">
+                        <a class="nav-link" href="industries">
+                            Industries <i class="bi bi-chevron-down dealifly-nav-caret ms-1"></i>
+                        </a>
+                        <ul class="navigation-1__menu dealifly-dropdown-menu dealifly-dropdown-menu--industries">
+                            <li class="navigation-1__menu-list">
+                                <a href="industries/b2b-companies" class="link navigation-1__menu-link">
+                                    <span class="dealifly-drop-title">B2B Companies</span>
+                                    <span class="dealifly-drop-sub">SaaS, tech &amp; professional services</span>
+                                </a>
+                            </li>
+                            <li class="navigation-1__menu-list">
+                                <a href="industries/ecommerce" class="link navigation-1__menu-link">
+                                    <span class="dealifly-drop-title">E-commerce</span>
+                                    <span class="dealifly-drop-sub">Direct-to-consumer &amp; digital brands</span>
+                                </a>
+                            </li>
+                            <li class="navigation-1__menu-list">
+                                <a href="industries/recruitment-agencies" class="link navigation-1__menu-link">
+                                    <span class="dealifly-drop-title">Recruitment Agencies</span>
+                                    <span class="dealifly-drop-sub">Candidates &amp; hiring client acquisition</span>
+                                </a>
+                            </li>
+                            <li class="navigation-1__menu-list">
+                                <a href="industries/accounting-firm" class="link navigation-1__menu-link">
+                                    <span class="dealifly-drop-title">Accounting Firms</span>
+                                    <span class="dealifly-drop-sub">Bespoke advisory acquisition</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact">Contact</a>
+                    </li>
+                </ul>
+                <div class="d-flex align-items-center gap-3 ms-lg-auto">
+                    <a href="contact" class="btn btn-sm btn-primary order-lg-2 text-light fw-medium rounded-pill">
+                        Get Started
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content Area -->
+    <main class="flex-grow-1">
+        <section class="growth-download-hero">
+            <canvas id="solutionHeroCanvas" class="growth-download-hero__canvas"></canvas>
+
+            <div class="container position-relative z-1">
+                <div class="growth-card-wrap">
+
+                    <!-- Breadcrumbs -->
+                    <div class="dealifly-solution-breadcrumbs mb-3">
+                        <a href="./">Home</a>
+                        <span class="sep">/</span>
+                        <span class="current">Growth Plan Download</span>
+                    </div>
+
+                    <!-- Header Content -->
+                    <div class="growth-plan-badge">
+                        <i class="bi bi-file-earmark-arrow-down"></i> INSTANT GROWTH FRAMEWORK
+                    </div>
+                    <h1 class="growth-page-title" id="pageHeading">
+                        Download Your <span style="color: #b7a5f5;">Growth Plan</span>
+                    </h1>
+                    <p class="growth-page-subtitle" id="pageSubheading">
+                        Complete the form below to collect your blueprint. You will immediately be able to download the complete Dealifly Growth Framework &amp; Marketing Automation Plan.
+                    </p>
+
+                    <!-- Form Card (Image 2 Structure) -->
+                    <div class="growth-form-card" id="formCard">
+                        <div id="statusMessage" class="growth-status-msg" role="alert"></div>
+
+                        <form id="growthPlanForm" action="growth-plan-submit.php" method="POST" novalidate>
+                            <!-- Hidden Honeypot & Plan tracker -->
+                            <div class="growth-honeypot" aria-hidden="true">
+                                <input type="text" name="website" tabindex="-1" autocomplete="off">
+                            </div>
+                            <input type="hidden" name="plan" id="planField" value="B2B Growth Plan">
+
+                            <!-- 1. Company name -->
+                            <div class="growth-field-group">
+                                <label for="companyName" class="growth-form-label">Company name</label>
+                                <input type="text" id="companyName" name="company" class="growth-form-input"
+                                    placeholder="Company name" maxlength="150" autocomplete="organization">
+                            </div>
+
+                            <!-- 2. First name* and Last name* (2 Columns) -->
+                            <div class="row g-3 growth-field-group">
+                                <div class="col-12 col-md-6">
+                                    <label for="firstName" class="growth-form-label">First name<span class="req">*</span></label>
+                                    <input type="text" id="firstName" name="first_name" class="growth-form-input"
+                                        placeholder="First name*" required maxlength="80" autocomplete="given-name">
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <label for="lastName" class="growth-form-label">Last name<span class="req">*</span></label>
+                                    <input type="text" id="lastName" name="last_name" class="growth-form-input"
+                                        placeholder="Last name*" required maxlength="80" autocomplete="family-name">
+                                </div>
+                            </div>
+
+                            <!-- 3. Email* -->
+                            <div class="growth-field-group">
+                                <label for="emailAddr" class="growth-form-label">Email<span class="req">*</span></label>
+                                <input type="email" id="emailAddr" name="email" class="growth-form-input"
+                                    placeholder="Email*" required maxlength="190" autocomplete="email">
+                            </div>
+
+                            <!-- 4. Phone number -->
+                            <div class="growth-field-group">
+                                <label for="phoneNum" class="growth-form-label">Phone number</label>
+                                <input type="tel" id="phoneNum" name="phone" class="growth-form-input"
+                                    placeholder="Phone number" maxlength="40" autocomplete="tel">
+                            </div>
+
+                            <!-- 5. Country* Dropdown -->
+                            <div class="growth-field-group">
+                                <label for="countrySelect" class="growth-form-label">Country<span class="req">*</span></label>
+                                <select id="countrySelect" name="country" class="growth-form-select" required>
+                                    <option value="" disabled selected>Select country*</option>
+                                    <option value="Netherlands">Netherlands</option>
+                                    <option value="United States">United States</option>
+                                    <option value="United Kingdom">United Kingdom</option>
+                                    <option value="Germany">Germany</option>
+                                    <option value="Belgium">Belgium</option>
+                                    <option value="France">France</option>
+                                    <option value="Canada">Canada</option>
+                                    <option value="Australia">Australia</option>
+                                    <option value="Switzerland">Switzerland</option>
+                                    <option value="Austria">Austria</option>
+                                    <option value="Ireland">Ireland</option>
+                                    <option value="Sweden">Sweden</option>
+                                    <option value="Denmark">Denmark</option>
+                                    <option value="Norway">Norway</option>
+                                    <option value="Finland">Finland</option>
+                                    <option value="Spain">Spain</option>
+                                    <option value="Italy">Italy</option>
+                                    <option value="United Arab Emirates">United Arab Emirates</option>
+                                    <option value="Singapore">Singapore</option>
+                                    <option value="India">India</option>
+                                    <option value="Other">Other country</option>
+                                </select>
+                            </div>
+
+                            <!-- 6. Request/comment -->
+                            <div class="growth-field-group">
+                                <label for="commentArea" class="growth-form-label">Request/comment</label>
+                                <textarea id="commentArea" name="comment" class="growth-form-textarea" rows="4"
+                                    placeholder="Request/comment" maxlength="2000"></textarea>
+                            </div>
+
+                            <!-- 7. Privacy Checkbox -->
+                            <div class="growth-checkbox-wrap">
+                                <input type="checkbox" id="privacyPolicy" name="privacy" value="1" required>
+                                <label for="privacyPolicy" class="growth-checkbox-label">
+                                    I agree to the <a href="contact" target="_blank" rel="noopener">privacy policy</a>.<span class="req">*</span>
+                                </label>
+                            </div>
+
+                            <!-- 8. Download Button -->
+                            <div class="text-start">
+                                <button type="submit" id="submitDownloadBtn" class="dealifly-btn-download-action">
+                                    <span>Download</span> <i class="bi bi-download"></i>
+                                </button>
+                            </div>
+                        </form>
+
+                        <!-- Success Screen (Rendered after successful submission) -->
+                        <div id="successCard" class="growth-success-card">
+                            <div class="growth-success-icon">
+                                <i class="bi bi-check2"></i>
+                            </div>
+                            <h3 class="text-white fw-bold mb-2">Thank you! Your Growth Plan is ready.</h3>
+                            <p class="text-light text-opacity-70 mb-4" id="successDetailsText">
+                                Your download has started automatically. If it didn't begin, click the direct download button below:
+                            </p>
+                            <div class="d-flex align-items-center justify-content-center gap-3 flex-wrap">
+                                <a id="directDownloadLink" href="assets/docs/Dealifly-Growth-Plan.pdf" download="Dealifly-Growth-Plan.pdf"
+                                    class="dealifly-btn-download-action">
+                                    <i class="bi bi-file-earmark-pdf"></i> Download PDF Again
+                                </a>
+                                <a href="./" class="btn btn-outline-light rounded-pill px-4 py-2">
+                                    Return to Home
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- WhatsApp Floating Button -->
+    <a class="dealifly-whatsapp-float" href="https://wa.me/31684986062?text=Hi%2C%20I%20downloaded%20the%20Growth%20Plan%20and%20want%20to%20talk"
+        target="_blank" rel="noopener" aria-label="Chat with Dealifly on WhatsApp">
+        <i class="bi bi-whatsapp" aria-hidden="true"></i>
+    </a>
+
+    <!-- Footer -->
+    <footer class="dealifly-footer-v2 pt-5 pb-4 border-top border-white border-opacity-10 mt-auto">
+        <div class="container">
+            <div class="d-flex flex-column flex-md-row align-items-center justify-content-between gap-3 text-light text-opacity-70 fs-14">
+                <div>
+                    <a href="./" class="text-light fw-bold text-decoration-none me-3">Dealifly</a>
+                    <span>&copy; 2026 All Rights Reserved | KVK: 97804444</span>
+                </div>
+                <div>
+                    <a href="contact" class="text-light text-opacity-70 text-decoration-none me-3">Privacy policy</a>
+                    <a href="contact" class="text-light text-opacity-70 text-decoration-none me-3">Terms of use</a>
+                    <a href="contact" class="text-light text-opacity-70 text-decoration-none">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="assets/js/bootstrap.bundle.js?v=20261014_mobile_fix_v11"></script>
+    <script src="assets/js/dealifly-solutions.js?v=20261014_mobile_fix_v11"></script>
+
+    <script>
+        (function () {
+            'use strict';
+
+            // 1. Detect Plan Parameter from URL
+            var params = new URLSearchParams(window.location.search);
+            var planParam = params.get('plan') || '';
+            var planField = document.getElementById('planField');
+            var pageHeading = document.getElementById('pageHeading');
+            var pageSubheading = document.getElementById('pageSubheading');
+
+            var planTitles = {
+                'b2b': 'B2B Companies Growth Plan',
+                'recruitment': 'Recruitment Agencies Growth Plan',
+                'ecommerce': 'E-commerce Scale & Acquisition Plan',
+                'accounting': 'Tax & Accounting Growth Plan'
+            };
+
+            var planKey = planParam.toLowerCase();
+            if (planTitles[planKey]) {
+                var fullTitle = planTitles[planKey];
+                planField.value = fullTitle;
+                pageHeading.innerHTML = 'Download Your <span style="color: #b7a5f5;">' + fullTitle + '</span>';
+                pageSubheading.textContent = 'Fill in your details below to instantly download the ' + fullTitle + ' (PDF) blueprint created by Dealifly.';
+            }
+
+            // 2. Handle automatic download if redirected with ?status=success&download=1
+            if (params.get('download') === '1' || params.get('status') === 'success') {
+                showSuccessState();
+                triggerPdfDownload();
+            }
+
+            function triggerPdfDownload() {
+                var link = document.createElement('a');
+                link.href = 'assets/docs/Dealifly-Growth-Plan.pdf';
+                link.download = 'Dealifly-Growth-Plan.pdf';
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+            }
+
+            function showSuccessState(firstName) {
+                var form = document.getElementById('growthPlanForm');
+                var successCard = document.getElementById('successCard');
+                if (form) form.style.display = 'none';
+                if (successCard) successCard.style.display = 'block';
+
+                if (firstName) {
+                    var detail = document.getElementById('successDetailsText');
+                    if (detail) {
+                        detail.innerHTML = 'Thank you, <strong>' + firstName + '</strong>! Your custom Growth Plan download has begun. If it did not start automatically, please click below:';
+                    }
+                }
+            }
+
+            // 3. Form Validation and AJAX Submission
+            var form = document.getElementById('growthPlanForm');
+            var statusMsg = document.getElementById('statusMessage');
+            var submitBtn = document.getElementById('submitDownloadBtn');
+
+            if (form) {
+                form.addEventListener('submit', function (e) {
+                    e.preventDefault();
+                    statusMsg.className = 'growth-status-msg';
+                    statusMsg.style.display = 'none';
+
+                    var firstName = document.getElementById('firstName').value.trim();
+                    var lastName = document.getElementById('lastName').value.trim();
+                    var email = document.getElementById('emailAddr').value.trim();
+                    var country = document.getElementById('countrySelect').value;
+                    var privacy = document.getElementById('privacyPolicy').checked;
+
+                    if (!firstName || !lastName || !email || !country || !privacy) {
+                        statusMsg.textContent = 'Please fill out all required fields marked with * and accept the privacy policy.';
+                        statusMsg.className = 'growth-status-msg is-error';
+                        return;
+                    }
+
+                    // Button loading state
+                    var originalBtnHtml = submitBtn.innerHTML;
+                    submitBtn.disabled = true;
+                    submitBtn.innerHTML = '<span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span> Preparing Download...';
+
+                    var formData = new FormData(form);
+
+                    fetch('growth-plan-submit.php', {
+                        method: 'POST',
+                        body: formData,
+                        headers: {
+                            'X-Requested-With': 'XMLHttpRequest',
+                            'Accept': 'application/json'
+                        }
+                    })
+                    .then(function (res) {
+                        return res.json().catch(function () { return { success: true }; });
+                    })
+                    .then(function (data) {
+                        triggerPdfDownload();
+                        showSuccessState(firstName);
+                    })
+                    .catch(function () {
+                        // In case of any network glitch, still guarantee the customer gets their PDF!
+                        triggerPdfDownload();
+                        showSuccessState(firstName);
+                    });
+                });
+            }
+        })();
+    </script>
+</body>
+
+</html>
